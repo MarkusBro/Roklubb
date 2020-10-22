@@ -40,7 +40,7 @@ public class ReceiveKlubb extends AbstractAppServlet {
     @Override
     protected void writeBody(HttpServletRequest req, HttpServletResponse res, PrintWriter out) throws ServletException, IOException {
         String klubb = req.getParameter("uklubb");
-        List<TableModel> klubbFromDn = UserRepository.getKlubb(klubb, out);
+        List<TableModel> klubbFromDn = UserRepository.getKlubb(klubb);
         //req.getRequestDispatcher("viewSearch.jsp").forward(req, res);
         out.format("<h1>Klubb:%s", klubb);
         out.println("<table classname='table table-dark'>");

@@ -55,7 +55,8 @@ CREATE TABLE `user` (
                         `password` varchar(50) not null,
                         FOREIGN KEY (userType_id) REFERENCES userType (id)
                             ON DELETE CASCADE
-                            ON UPDATE RESTRICT,
+                            ON UPDATE R
+                            ESTRICT,
                         FOREIGN KEY (class_id) REFERENCES class (id)
                             ON DELETE CASCADE
                             ON UPDATE RESTRICT,

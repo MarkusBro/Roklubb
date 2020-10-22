@@ -67,11 +67,10 @@ public final class DbTool {
     /**
      * Establishes a connection with a mariaDB or returns an existing one.
      *
-     * @param out for html printing in front-end e.g. (for errors or content)
      * @return connection to db
      * @throws SQLException if the connection fails
      */
-    public Connection dbLoggIn(PrintWriter out) throws SQLException {
+    public Connection dbLoggIn() throws SQLException {
         Connection toReturn = null;
         Map<String, String> result = getProperties();
 
@@ -86,7 +85,7 @@ public final class DbTool {
            
         } catch (SQLException e) {
             e.printStackTrace();
-            out.println("SQL Exception " + e);
+            System.out.println("SQL Exception " + e);
         }
         return toReturn;
     }

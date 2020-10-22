@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Testing testing</title>
     <%@include file="LoginCSS.jsp" %>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
 
@@ -28,12 +28,15 @@
     <div class="navbar">
         <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo"
              onclick="location.href='index.jsp'">
-
     </div>
-    <p><font color="red">${errorMessage}</font></p>
 
 
     <div class="login-box">
+        <% if(request.getAttribute("error") != null) {
+            out.println("<div class='alert alert-danger'>" + request.getAttribute("error") + "</div>");
+        } %>
+
+
         <form action="${pageContext.request.contextPath}/Login" method="POST">
             <h1>Logg inn</h1>
             <div class="textbox">
@@ -46,7 +49,7 @@
                 <input type="password" placeholder="Password" name="password" value="">
 
             </div>
-            <input class="btn" type="submit" name="" value="Logg inn">
+            <input class="btn btn-primary" type="submit" name="" value="Logg inn">
         </form>
     </div>
 
