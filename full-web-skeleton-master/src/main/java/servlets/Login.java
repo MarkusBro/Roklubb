@@ -1,11 +1,13 @@
 package servlets;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet(name = "Login", urlPatterns = {"/Login"})
 public class Login extends HttpServlet {
@@ -23,11 +25,20 @@ public class Login extends HttpServlet {
         String name = request.getParameter("name");
         String password = request.getParameter("password");
 
-        if (name.equals("admin") && password.equals("Gr3")) {
-            request.setAttribute("name", name);
-            response.sendRedirect("StartSide.jsp");
-        } else {
-            response.sendRedirect("Login.jsp");
+        UserDAO userdb = new UserDAO();
+
+        try {
+            if (userdb.checklogin(name,password)){
+                request.getRequestDispatcher("StartSide.jsp").forward(request,response);
+
+            }else {
+                String error = "Feil brukernavn eller passord";
+
+                request.setAttribute("error", error);
+                request.getRequestDispatcher("Login.jsp").forward(request,response);
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
         }
     }
 }

@@ -39,7 +39,7 @@ public class ReceiveUserNameFromDb extends AbstractAppServlet {
     @Override
     protected void writeBody(HttpServletRequest req, HttpServletResponse res, PrintWriter out) throws ServletException, IOException {
         String username = req.getParameter("uname");
-        List<TableModel> tableModelList = UserRepository.getResults(out);
+        List<TableModel> tableModelList = UserRepository.getResults();
         req.setAttribute("table", tableModelList);
         //req.getRequestDispatcher("viewSearch.jsp").forward(req, res);
 

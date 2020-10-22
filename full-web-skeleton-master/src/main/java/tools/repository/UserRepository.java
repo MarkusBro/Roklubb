@@ -20,11 +20,11 @@ public class UserRepository {
      * @param p    printwriter for å skrive ut html i servlet. F.eks SQL feilmeldinger eller annen info.
      */
 
-    public static void addUser(UserModel user, PrintWriter p) {
+    public static void addUser(UserModel user) {
         Connection db = null;
         PreparedStatement insertNewUser = null;
         try {
-            db = DbTool.getINSTANCE().dbLoggIn(p);
+            db = DbTool.getINSTANCE().dbLoggIn();
             db.setCatalog("oblig1");
             String query =
                     "INSERT INTO `user` (User_firstName, User_lastName,User_Email, User_password ) values (?,?,?,?)";
@@ -56,12 +56,12 @@ public class UserRepository {
      * @return et String objekt med eposten til brukeren.
      */
 
-    public static List<TableModel> getKlubb(String klubb, PrintWriter p) {
+    public static List<TableModel> getKlubb(String klubb) {
         Connection db = null;
         PreparedStatement prepareStatement = null;
         List<TableModel> toReturn = new ArrayList<>();
         try {
-            db = DbTool.getINSTANCE().dbLoggIn(p);
+            db = DbTool.getINSTANCE().dbLoggIn();
             ResultSet rs = null;
             String query = "SELECT * FROM mytable where Klubb  = ?";
             prepareStatement = db.prepareStatement(query);
@@ -86,13 +86,13 @@ public class UserRepository {
 
     }
 
-    public static List<TableModel> getResults(PrintWriter printWriter) {
+    public static List<TableModel> getResults() {
         Connection db = null;
         PreparedStatement prepareStatement = null;
 
         List<TableModel> toReturn = new ArrayList<>();
         try {
-            db = DbTool.getINSTANCE().dbLoggIn(printWriter);
+            db = DbTool.getINSTANCE().dbLoggIn();
             ResultSet rs = null;
             String query = "SELECT * FROM mytable";
             prepareStatement = db.prepareStatement(query);
