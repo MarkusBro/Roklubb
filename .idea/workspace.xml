@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6740559f-6446-4cca-a391-79e26c57aa4a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Roklubb.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f7b91883-d846-4e1d-9b01-14a42b24f43e.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f7b91883-d846-4e1d-9b01-14a42b24f43e/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f7b91883-d846-4e1d-9b01-14a42b24f43e/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/f7b91883-d846-4e1d-9b01-14a42b24f43e/storage_v2/_src_/schema/mysql.osA4Bg.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/full-web-skeleton-master/src/main/webapp/MinSide.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/full-web-skeleton-master/src/main/webapp/bilder/profilePic.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/full-web-skeleton-master/Skeleton.iml" beforeDir="false" afterPath="$PROJECT_DIR$/full-web-skeleton-master/Skeleton.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/full-web-skeleton-master/src/main/webapp/StartSide.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/full-web-skeleton-master/src/main/webapp/StartSide.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/full-web-skeleton-master/src/main/webapp/MinSide.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ixdiQncqlsHMOsD8k6aVzrsCZ9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/full-web-skeleton-master/src/main/webapp/bilder" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6740559f-6446-4cca-a391-79e26c57aa4a" name="Default Changelist" comment="" />
+      <created>1602853305389</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602853305389</updated>
+      <workItem from="1602853306867" duration="654000" />
+      <workItem from="1602861102015" duration="3550000" />
+      <workItem from="1603017936478" duration="6749000" />
+      <workItem from="1603026158036" duration="145000" />
+      <workItem from="1603106691506" duration="766000" />
+      <workItem from="1603107667838" duration="427000" />
+      <workItem from="1603271014615" duration="69000" />
+      <workItem from="1603271208716" duration="598000" />
+      <workItem from="1603272969457" duration="277000" />
+      <workItem from="1603283399615" duration="4626000" />
+      <workItem from="1603292587227" duration="1766000" />
+      <workItem from="1603356118599" duration="1013000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="206" y="253" key="#Template_Data_Languages" timestamp="1603288166200">
+      <screen x="0" y="23" width="1440" height="812" />
+    </state>
+    <state x="206" y="253" key="#Template_Data_Languages/0.23.1440.812@0.23.1440.812" timestamp="1603288166200" />
+    <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602853647960">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1602853647960" />
+    <state x="435" y="250" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602861520942">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="435" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1602861520942" />
+    <state x="457" y="226" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1603288110071">
+      <screen x="0" y="23" width="1440" height="812" />
+    </state>
+    <state x="457" y="226" key="#com.intellij.ide.util.TreeFileChooserDialog/0.23.1440.812@0.23.1440.812" timestamp="1603288110071" />
+    <state width="317" height="539" key="HiddenNamespacesPopup" timestamp="1602853751182">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="317" height="539" key="HiddenNamespacesPopup/0.0.1440.900@0.0.1440.900" timestamp="1602853751182" />
+  </component>
+</project>
