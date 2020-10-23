@@ -1,9 +1,7 @@
 package servlets;
 
 
-
-public abstract class AbstractUser{
-
+public abstract class AbstractUser {
 
 
 }

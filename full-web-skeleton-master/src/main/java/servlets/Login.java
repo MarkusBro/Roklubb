@@ -1,6 +1,5 @@
 package servlets;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,14 +27,14 @@ public class Login extends HttpServlet {
         UserDAO userdb = new UserDAO();
 
         try {
-            if (userdb.checklogin(name,password)){
-                request.getRequestDispatcher("StartSide.jsp").forward(request,response);
+            if (userdb.checklogin(name, password)) {
+                request.getRequestDispatcher("StartSide.jsp").forward(request, response);
 
-            }else {
+            } else {
                 String error = "Feil brukernavn eller passord";
 
                 request.setAttribute("error", error);
-                request.getRequestDispatcher("Login.jsp").forward(request,response);
+                request.getRequestDispatcher("Login.jsp").forward(request, response);
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

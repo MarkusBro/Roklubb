@@ -1,31 +1,30 @@
 package servlets;
 
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
- *
  * @author evenal
  */
 public abstract class AbstractAppServlet extends HttpServlet {
 
     public static final String HTML_PAGE_START
-        = "<html>\n<head>\n"
-        + "<title>%s</title>\n</head>\n<body>\n";
+            = "<html>\n<head>\n"
+            + "<title>%s</title>\n</head>\n<body>\n";
     public static final String HTML_PAGE_END
-        = "</body>\n</html>";
+            = "</body>\n</html>";
 
     protected abstract void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException;
+            throws ServletException, IOException;
 
     protected void writeResponse(HttpServletRequest request,
-        HttpServletResponse response,
-        String title)
+                                 HttpServletResponse response,
+                                 String title)
             throws IOException, ServletException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -36,34 +35,35 @@ public abstract class AbstractAppServlet extends HttpServlet {
     }
 
     protected abstract void writeBody(HttpServletRequest req, HttpServletResponse res,
-        PrintWriter out) throws ServletException, IOException;
+                                      PrintWriter out) throws ServletException, IOException;
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+
     /**
      * Handles the HTTP <code>GET</code> method.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
         processRequest(request, response);
     }
 
     /**
      * Handles the HTTP <code>POST</code> method.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
         processRequest(request, response);
     }
 

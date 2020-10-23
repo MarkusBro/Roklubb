@@ -1,8 +1,6 @@
 package models;
 
 import java.sql.Time;
-import java.text.DecimalFormat;
-import java.time.LocalTime;
 
 public class TableModel {
     Integer Rank;

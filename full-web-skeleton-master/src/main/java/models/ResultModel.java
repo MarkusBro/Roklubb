@@ -1,3 +1,12 @@
+/*
+ *   ResultModel for Getters/Setters
+ *   Used in ResultTableServlet and UserRepository
+ *
+ *   @Version 2.0
+ *
+ *   @Author Michael H. Valen
+ */
+
 package models;
 
 import java.sql.Date;
@@ -7,13 +16,6 @@ public class ResultModel {
     String fname;
     String lname;
     Date dob;
-
-    /*
-     * @param firstName the users firstname
-     * @param lastName the users lastname
-     * @param userName the users email .e.g., example@example.com
-     * @param password the users password: we usually encrypt it in the database but thats for you to figure out :)
-     */
 
     public ResultModel(String firstName, String lastName, Date DateOfBirth) {
         fname = firstName;
@@ -44,9 +46,5 @@ public class ResultModel {
     public void setDob(Date dob) {
         this.dob = dob;
     }
-
-
-
-
 }
 

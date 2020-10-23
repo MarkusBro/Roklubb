@@ -7,11 +7,11 @@ public class UserModel {
     private String password;
 
     /*
-            * @param firstName the users firstname
+     * @param firstName the users firstname
      * @param lastName the users lastname
      * @param userName the users email .e.g., example@example.com
      * @param password the users password: we usually encrypt it in the database but thats for you to figure out :)
-            */
+     */
     public UserModel(String firstName, String lastName, String userName, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -20,8 +20,8 @@ public class UserModel {
     }
 
     /*
-            * GETTERS AND SETTERS!
-            */
+     * GETTERS AND SETTERS!
+     */
 
     public String getFirstName() {
         return firstName;
@@ -46,7 +46,6 @@ public class UserModel {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
 
 
     public String getPassword() {

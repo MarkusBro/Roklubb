@@ -1,18 +1,15 @@
 package servlets;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
+import models.TableModel;
+import tools.repository.UserRepository;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.registry.infomodel.User;
-
-import models.TableModel;
-import tools.repository.UserRepository;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 
 @WebServlet(name = "ReceiveKlubb", urlPatterns = {"/ReceiveKlubb"})
@@ -57,7 +54,7 @@ public class ReceiveKlubb extends AbstractAppServlet {
         for (TableModel model : klubbFromDn) {
 
             out.format("<tr style= border: 2px solid: black;> <td> %s </td><td> %s </td> <td>  %s </td> <td>  %s </td></tr>",
-                    model.getRank(), model.getScore(),model.getNavn(), model.getKlubb());
+                    model.getRank(), model.getScore(), model.getNavn(), model.getKlubb());
         }
         req.setAttribute("liste", klubbFromDn);
     }
