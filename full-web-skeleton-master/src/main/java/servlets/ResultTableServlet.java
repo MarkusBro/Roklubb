@@ -7,8 +7,6 @@
  *
  *   @Author Michael H. Valen
  */
-
-
 package servlets;
 
 import models.ResultModel;

@@ -8,7 +8,6 @@ Import Java>HTML>Database library>Java>Style>JS
 
 @Author Michael H. Valen
 --->
-
 <%@ page import="models.ResultModel" %>
 <%@ page import="java.util.List" %>
 <%@ page import="tools.repository.UserRepository" %>

@@ -6,11 +6,9 @@
  *
  *   @Author Michael H. Valen
  */
-
 package models;
 
 import java.sql.Date;
-
 
 public class ResultModel {
     String fname;
@@ -23,6 +21,9 @@ public class ResultModel {
         dob = DateOfBirth;
     }
 
+    /*
+     *   Getter/Setter method for ResultModel class and mehtod
+     */
     public String getFname() {
         return fname;
     }
