@@ -5,6 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import models.ResultModel;
 import models.TableModel;
 import models.UserModel;
 import tools.DbTool;
@@ -89,7 +90,6 @@ public class UserRepository {
     public static List<TableModel> getResults() {
         Connection db = null;
         PreparedStatement prepareStatement = null;
-
         List<TableModel> toReturn = new ArrayList<>();
         try {
             db = DbTool.getINSTANCE().dbLoggIn();
@@ -104,9 +104,7 @@ public class UserRepository {
                         rs.getInt("krhev"), rs.getDouble("sargeant"), rs.getInt("beveg"));
 
                 toReturn.add(getTableModel);
-
             }
-
             rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -115,4 +113,31 @@ public class UserRepository {
     }
 
 
+    public static List<ResultModel> getResult() {
+        Connection db = null;
+        PreparedStatement prepareStatement = null;
+        List<ResultModel> toReturn = new ArrayList<>();
+        try {
+            db = DbTool.getINSTANCE().dbLoggIn();
+            ResultSet rs = null;
+            String query = "SELECT * FROM roklubb.user";
+            prepareStatement = db.prepareStatement(query);
+            rs = prepareStatement.executeQuery();
+            while (rs.next()) {
+                ResultModel getResultTable = new
+                        ResultModel
+                                (rs.getString("fname"),
+                                rs.getString("lname"),
+                                rs.getDate("dob"));
+                toReturn.add(getResultTable);
+            }
+            rs.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return toReturn;
+    }
 }
+
+
+
