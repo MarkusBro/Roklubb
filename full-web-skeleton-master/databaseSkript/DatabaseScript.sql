@@ -33,7 +33,7 @@ CREATE TABLE `userType` (
 DROP TABLE IF EXISTS userInfo;
 CREATE TABLE `userInfo` (
                         `email` VARCHAR(127) PRIMARY KEY,
-                        `password` BINARY(64) NOT NULL,
+                        `password` Varchar(64) NOT NULL,
                         `fname` VARCHAR(35) NOT NULL,
                         `lname` VARCHAR(35) NOT NULL,
                         `dob` DATE NOT NULL,
