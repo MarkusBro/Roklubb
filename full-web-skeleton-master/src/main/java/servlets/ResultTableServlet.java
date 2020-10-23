@@ -34,11 +34,7 @@ public class ResultTableServlet extends AbstractAppServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<ResultModel> useResult = UserRepository.getResult();
-        for (ResultModel result : useResult) {
-            req.setAttribute("fname", result.getFname());
-            req.setAttribute("lname", result.getLname());
-            req.setAttribute("dob", result.getDob());
-        }
+        req.setAttribute("List", useResult);
         req.getRequestDispatcher("ResultTable.jsp").forward(req, resp);
     }
 

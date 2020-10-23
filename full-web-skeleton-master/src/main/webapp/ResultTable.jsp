@@ -54,15 +54,9 @@
 
         <!--- Innholdet i table --->
         <tbody>
-            <tr>
-                <td><%= request.getAttribute("fname")%></td>
-                <td><%= request.getAttribute("lname")%></td>
-                <td><%= request.getAttribute("dob")%></td>
-            </tr>
-
 
             <%
-                List<ResultModel> result = UserRepository.getResult();
+                List<ResultModel> result = (List<ResultModel>) request.getAttribute("List");
 
                 for (ResultModel model : result) {
             %>
