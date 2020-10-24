@@ -1,6 +1,9 @@
 package tools;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -50,14 +53,14 @@ public final class DbTool {
     }
 
     /**
-     *  used to list all files in current working directory on payara
-     *  call this method inside getProperties() if needed.
-     *  useful for debugging paths on payara server.
+     * used to list all files in current working directory on payara
+     * call this method inside getProperties() if needed.
+     * useful for debugging paths on payara server.
      */
     private static void printFilesInFolder() {
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
         File file = new File(System.getProperty("user.dir"));
-        String [] contents = file.list();
+        String[] contents = file.list();
 
         for (int i = 0; i < Objects.requireNonNull(contents).length; i++) {
             System.out.println(contents[i]);
@@ -74,15 +77,14 @@ public final class DbTool {
         Connection toReturn = null;
         Map<String, String> result = getProperties();
 
-
         try {
             toReturn = (connection != null)
-                ? connection
-                : DriverManager.getConnection(
+                    ? connection
+                    : DriverManager.getConnection(
                     result.get("URL"),
                     result.get("username"),
                     result.get("password"));
-           
+
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("SQL Exception " + e);

@@ -25,16 +25,10 @@ Import Java>HTML>Database library>Java>Style>JS
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css"/>
-
-    <!--- Linker til styles.css --->
-    <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body class="Table">
-
 <h1>TableTest</h1>
-
 <table id="ResultTable" class="table table-striped table-bordered" style="width:100%" align="table">
     <!--- Innholdet over table --->
     <thead>
@@ -75,7 +69,6 @@ Import Java>HTML>Database library>Java>Style>JS
     <%
         }
     %>
-
 
     </tbody>
 </table>
