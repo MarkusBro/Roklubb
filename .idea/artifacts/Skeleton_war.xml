@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Skeleton:war">
+    <output-path>$PROJECT_DIR$/full-web-skeleton-master/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Skeleton</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Skeleton-1.0.war">
+      <element id="artifact" artifact-name="Skeleton:war exploded" />
+    </root>
+  </artifact>
+</component>

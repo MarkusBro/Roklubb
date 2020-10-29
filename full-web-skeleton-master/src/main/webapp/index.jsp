@@ -22,14 +22,14 @@
                  onclick="location.href='index.jsp'">
 
             <button class="button2" onclick="location.href='StartSide.jsp'" type="button">
-                Register deg</button>
+                Registrer deg
+            </button>
             <button class="button" onclick="location.href='Login.jsp'" type="button">
                 Logg inn</button>
         </div>
         <p>Click here to send a request for a user.
             <a href="RequestUserNameFromDb">get user</a></p>
         <div class="content">
-            <small>Ny startside for testresultater</small>
             <h1>Testresultater</h1>
             <button class="button" onclick="location.href='ReceiveUserNameFromDb'" type="button">
                 Søk</button>
