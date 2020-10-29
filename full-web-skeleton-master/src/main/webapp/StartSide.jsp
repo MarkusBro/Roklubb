@@ -29,7 +29,7 @@
         <a href="RequestUserNameFromDb">get user</a></p>
     <div class="content">
         <h1>Testresultater</h1>
-        <button class="button" onclick="location.href='viewSearch.jsp'" type="button">
+        <button class="button" onclick="location.href='Klasser.jsp'" type="button">
             Søk
         </button>
     </div>
