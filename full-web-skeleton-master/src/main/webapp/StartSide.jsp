@@ -28,9 +28,8 @@
     <p>Click here to send a request for a user.
         <a href="RequestUserNameFromDb">get user</a></p>
     <div class="content">
-        <small>Ny startside for testresultater</small>
         <h1>Testresultater</h1>
-        <button class="button" onclick="location.href='viewSearch.jsp'" type="button">
+        <button class="button" onclick="location.href='Klasser.jsp'" type="button">
             Søk
         </button>
     </div>
