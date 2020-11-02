@@ -18,6 +18,12 @@ public class AddUser extends HttpServlet{
 
        }
 
+    /**
+     *
+     * @param req: henter prarmete som brukern har skrevet inn
+     * setter verdiene i UserInfoModel og klaller på addUser som vil sende en
+     *           inset spørring til databasen
+     */
        @Override
        protected void doPost(HttpServletRequest req, HttpServletResponse resp)
                throws IOException, ServletException {
