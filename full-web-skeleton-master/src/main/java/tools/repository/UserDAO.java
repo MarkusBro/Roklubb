@@ -1,4 +1,4 @@
-package servlets;
+package tools.repository;
 import tools.DbTool;
 
 import java.sql.*;
@@ -7,7 +7,7 @@ public class UserDAO {
             ClassNotFoundException{
         Connection conn =DbTool.getINSTANCE().dbLoggIn();
 
-        String sql = "SELECT * FROM roklubb.userInfo WHERE email = ?  and password = ?";
+        String sql = "SELECT * FROM roklubb.user WHERE email = ?  and password = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, username);
         statement.setString(2, password);

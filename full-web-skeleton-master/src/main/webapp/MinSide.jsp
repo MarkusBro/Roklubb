@@ -247,7 +247,6 @@
         position: absolute;
         top: 57.5%;
         left: 30px;
-
     }
     .card-container .button3:hover{
         background: transparent;
@@ -267,7 +266,6 @@
         position: absolute;
         top: 66%;
         left: 30px;
-
     }
     .card-container .button4:hover{
         background: transparent;
