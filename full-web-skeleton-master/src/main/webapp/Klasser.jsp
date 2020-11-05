@@ -40,7 +40,7 @@
         </svg>
         Tilbake
     </button>
-    <button class="button1" type="button">
+    <button class="button1" type="button" onclick="location.href='SeniorMann.jsp'">
         SENIOR-MENN
     </button>
 

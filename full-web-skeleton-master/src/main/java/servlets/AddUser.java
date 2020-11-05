@@ -9,39 +9,45 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.text.DateFormat;
+import java.util.Date;
 
 @WebServlet(name = "adduser", urlPatterns = {"/AddUser"})
-public class AddUser extends HttpServlet{
+public class AddUser extends HttpServlet {
 
-       @Override
-       protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-       }
+    }
 
-    /**
-     *
-     * @param req: henter prarmete som brukern har skrevet inn
-     * setter verdiene i UserInfoModel og klaller på addUser som vil sende en
-     *           inset spørring til databasen
-     */
-       @Override
-       protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-               throws IOException, ServletException {
-           String email = req.getParameter("email");
-           String passord = req.getParameter("passord");
-           String firstName = req.getParameter("fname");
-           String lastName = req.getParameter("lname");
-           String date =  req.getParameter("dob");
-           String bio = req.getParameter("bio");
-           System.out.println(email + passord + firstName + lastName +
-                   date + bio);
-           UserInfoModel reqAddUser = new UserInfoModel(email, passord,firstName,lastName,
-                   date, bio);
-           ClassRepository.addUser(reqAddUser);
-           req.getRequestDispatcher("StartSide.jsp").forward(req,resp);
-       }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws IOException, ServletException {
+        resp.setContentType("text/plain; charset=UTF-8");
 
-   }
+        String email = req.getParameter("email");
+        String password = req.getParameter("passord");
+        String firstName = req.getParameter("fname");
+        String lastName = req.getParameter("lname");
+        String date = req.getParameter("dob");
+        String bio = req.getParameter("bio");
+        String userType = req.getParameter("usertype");
+        String className = req.getParameter("class");
+        String club = req.getParameter("club");
+
+        System.out.println(email+"," + password+"," + firstName+"," + lastName+"," +
+                date+"," + bio+"," + userType+"," + className+"," + club);
+
+        UserInfoModel AddClub = new UserInfoModel(club);
+        //ClassRepository.addClub(AddClub);
+
+        UserInfoModel AddUser = new UserInfoModel(email, password, firstName, lastName,
+                date, bio,userType, className, club);
+        ClassRepository.addUser(AddUser);
+        req.getRequestDispatcher("StartSide.jsp").forward(req, resp);
 
 
+    }
+}
 
