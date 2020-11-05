@@ -159,6 +159,7 @@
         top: 26%;
         left: 17.5%;
     }
+
     .card-container h4{
         font-family: Arial, Helvetica, sans-serif;
         color: black;
