@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Markus BrÃ¸dsjÃ¸
+  User: Markus Brødsjø
   Date: 29.10.2020
   Time: 09.13
   To change this template use File | Settings | File Templates.
@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NewUser</title>
-    <%@ page contentType="text/html; charset=UTF-8" %>
+    <%@ page contentType="text/html; charset=ISO-8859-1" %>
     <%@include file="cssLoader.jsp" %>
 
 </head>
@@ -31,19 +31,19 @@
     <div class="newUser">
 
         <form action="${pageContext.request.contextPath}/AddUser" method="POST">
-            <h2>Legg til ny bruker Ã¸Ã¦Ã¥</h2>
+            <h2>Legg til ny bruker øæå</h2>
             <div class="textbox">
                 <input type="text" placeholder="Email" name="email" value="">
                 <input type="password" placeholder="Passord" name="passord" value="">
                 <input type="text" placeholder="Fornavn" name="fname" value="">
                 <input type="text" placeholder="Etternavn" name="lname" value="">
-                <input type="date" placeholder="FÃ¸dselsdato" name="dob" value="">
+                <input type="date" placeholder="Fødselsdato" name="dob" value="">
                 <input type="text" placeholder="Klubb" name="club" value="">
                 <br/>
                 <br/>
                 <label for="usertype">Velg din brukertype</label>
                 <select charset="UTF-8" name="usertype" id="usertype">
-                    <option value="UtÃ¸ver">utÃ¸ver</option>
+                    <option value="Utøver">utøver</option>
                     <option value="Trener">trener</option>
                     <option value="Admin">admin</option>
                 </select>
