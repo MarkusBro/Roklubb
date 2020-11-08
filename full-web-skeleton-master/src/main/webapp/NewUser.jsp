@@ -1,18 +1,17 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Markus BrÃ¸dsjÃ¸
+  User: Markus Brødsjø
   Date: 29.10.2020
   Time: 09.13
   To change this template use File | Settings | File Templates.
 --%>
-
 <html>
 <head>
     <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NewUser</title>
-    <%@ page contentType="text/html; charset=UTF-8" %>
+    <%@ page contentType="text/html; charset=ISO-8859-1" %>
     <%@include file="cssLoader.jsp" %>
 
 </head>
@@ -32,24 +31,17 @@
 
             <form action="${pageContext.request.contextPath}/AddUser" method="POST">
                 <br/>
-
                 <p><u><h2>Legg til ny bruker</h2></u></p>
-
                 <br/>
                 <br/>
                 <br/>
-
-
                 <div class="textbox">
-
-                    <input type="text" placeholder="Email" name="Email" value="">
-
-                    <input type="text" placeholder="Fornavn" name="Fname" value="">
-                    <input type="text" placeholder="Etternavn" name="Lname" value="">
-                    <input type="date" placeholder="FÃ¸dselsdato" name="Dob" value="">
-                    <input type="text" placeholder="Klubb" name="Club" value="">
-
-                    <input type="password" placeholder="Passord" name="Passord" value="">
+                    <input type="text" placeholder="Email" name="email" value="">
+                    <input type="text" placeholder="Fornavn" name="fname" value="">
+                    <input type="text" placeholder="Etternavn" name="lname" value="">
+                    <input type="date" placeholder="Fødselsdato" name="dob" value="">
+                    <input type="text" placeholder="Klubb" name="club" value="">
+                    <input type="password" placeholder="Passord" name="passord" value="">
                     <br/>
                     <br/>
                     <br/>
@@ -70,7 +62,7 @@
                     <br/>
                     <label for="usertype">Velg din brukertype:</label>
                     <select charset="UTF-8" name="usertype" id="usertype">
-                        <option value="UtÃ¸ver">UtÃ¸ver</option>
+                        <option value="Utøver">Utøver</option>
                         <option value="Trener">Trener</option>
                         <option value="Admin">Admin</option>
                     </select>
@@ -78,7 +70,7 @@
                     <br/>
                     <label for="klasse">Velg din klasse:</label>
                     <select name="class" id="klasse">
-                        <option name="Senior Mann"value="Senior mann">Senior Mann</option>
+                        <option name="Senior Mann" value="Senior mann">Senior Mann</option>
                         <option value="Senior dame">Senior Dame</option>
                         <option value="A gutter">Junior A Gutter</option>
                         <option value="A jenter">Junior A Jenter</option>
@@ -136,7 +128,7 @@
         padding-bottom: 20px;
         width: 200px;
     }
-    input[name=Email] {
+    input[name=email] {
         border: 2px solid darkgrey;
         border-radius: 10px;
         width: 90%;
@@ -144,7 +136,7 @@
         top: 14%;
         left: 5%;
     }
-    input[name=Passord] {
+    input[name=passord] {
         border: 2px solid darkgrey;
         border-radius: 10px;
         width: 90%;
@@ -152,7 +144,7 @@
         top: 55%;
         left: 5%;
     }
-    input[name=Dob] {
+    input[name=dob] {
         border: 2px solid darkgrey;
         border-radius: 10px;
         width: 90%;
@@ -160,14 +152,14 @@
         top: 38%;
         left: 5%;
     }
-    input[name=Fname] {
+    input[name=fname] {
         border: 2px solid darkgrey;
         border-radius: 10px;
         width: 90%;position:absolute;
         top: 22%;
         left: 5%;
     }
-    input[name=Lname] {
+    input[name=lname] {
         border: 2px solid darkgrey;
         border-radius: 10px;
         width: 90%;
@@ -175,7 +167,7 @@
         top: 30%;
         left: 5%;
     }
-    input[name=Club] {
+    input[name=club] {
         border: 2px solid darkgrey;
         border-radius: 10px;
         width: 90%;
