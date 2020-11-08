@@ -27,18 +27,19 @@ public class ClassRepository {
         try {
             db = DbTool.getINSTANCE().dbLoggIn();
             db.setCatalog("roklubb");
-            String query = "INSERT INTO roklubb.user (email, userType_name, class_name, club_name,password, fname, lname, dob, bio) " +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO roklubb.user (id,email, userType_name, class_name, club_name,password, fname, lname, dob, bio) " +
+                    "VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?)";
             insertNewUser = db.prepareStatement(query);
-            insertNewUser.setString(1, user.getEmail());
-            insertNewUser.setString(2, user.getUserType());
-            insertNewUser.setString(3, user.getClassName());
-            insertNewUser.setString(4, user.getClub());
-            insertNewUser.setString(5, user.getPassword());
-            insertNewUser.setString(6, user.getFirstName());
-            insertNewUser.setString(7, user.getLastName());
-            insertNewUser.setString(8, user.getDob());
-            insertNewUser.setString(9, user.getBio());
+            insertNewUser.setString(1, user.getID());
+            insertNewUser.setString(2, user.getEmail());
+            insertNewUser.setString(3, user.getUserType());
+            insertNewUser.setString(4, user.getClassName());
+            insertNewUser.setString(5, user.getClub());
+            insertNewUser.setString(6, user.getPassword());
+            insertNewUser.setString(7, user.getFirstName());
+            insertNewUser.setString(8, user.getLastName());
+            insertNewUser.setString(9, user.getDob());
+            insertNewUser.setString(10, user.getBio());
             insertNewUser.execute();
 
         } catch (SQLException throwables) {
@@ -113,7 +114,34 @@ public class ClassRepository {
 
     }
 
+    public static List<UserInfoModel> getUser() {
+        Connection db = null;
+        PreparedStatement prepareStatement = null;
+        List<UserInfoModel> toReturn = new ArrayList<>();
+        try {
+            db = DbTool.getINSTANCE().dbLoggIn();
+            ResultSet rs = null;
+            String query = "SELECT id, fname, lname, dob, userType_name, class_name, club_name\n" +
+                    "from roklubb.user;";
+            prepareStatement = db.prepareStatement(query);
+            rs = prepareStatement.executeQuery();
+            while (rs.next()) {
+                UserInfoModel getTableModel = new
+                        UserInfoModel(rs.getString("id"), rs.getString("fname"), rs.getString("lname"), rs.getString("dob"), rs.getString("userType_name")
+                        ,rs.getString("class_name"), rs.getString("club_name"));
 
+                toReturn.add(getTableModel);
+
+            }
+            rs.close();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return toReturn;
+
+    }
     public static List<UserInfoModel> newList() {
         Connection db = null;
         PreparedStatement prepareStatement = null;
@@ -127,7 +155,7 @@ public class ClassRepository {
             rs = prepareStatement.executeQuery();
             while (rs.next()) {
                 UserInfoModel getModel = new
-                        UserInfoModel(rs.getString("email"), rs.getString("password"), rs.getString("fname"),
+                        UserInfoModel(rs.getString("id"),rs.getString("email"), rs.getString("password"), rs.getString("fname"),
                         rs.getString("lname"), rs.getString("dob"), rs.getString("bio"), rs.getString("usertype"), rs.getString("classname"), rs.getString("club"));
 
                 toReturn.add(getModel);

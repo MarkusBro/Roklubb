@@ -6,6 +6,7 @@ import jdk.nashorn.internal.runtime.regexp.joni.ast.StringNode;
 import java.util.Date;
 
 public class UserInfoModel {
+    String ID;
     String email;
     String password;
     String firstName;
@@ -16,7 +17,8 @@ public class UserInfoModel {
     String className;
     String club;
 
-    public UserInfoModel(String email, String password, String firstName, String lastName, String dob, String bio, String userType, String className, String club) {
+    public UserInfoModel(String ID,String email, String password, String firstName, String lastName, String dob, String bio, String userType, String className, String club) {
+        this.ID = ID;
         this.email = email;
         this.password = password;
         this.firstName = firstName;
@@ -27,10 +29,27 @@ public class UserInfoModel {
         this.className = className;
         this.club = club;
     }
-
     public UserInfoModel(String club) {
         this.club = club;
     }
+    public UserInfoModel(String ID, String firstName, String lastName, String dob, String userType, String className, String club){
+        this.ID = ID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = dob;
+        this.userType = userType;
+        this.className = className;
+        this.club = club;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
 
     public String getEmail() {
         return email;

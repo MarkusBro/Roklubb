@@ -25,7 +25,7 @@ public class AddUser extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
         resp.setContentType("text/plain; charset=UTF-8");
-
+        String ID = req.getParameter("ID");
         String email = req.getParameter("email");
         String password = req.getParameter("passord");
         String firstName = req.getParameter("fname");
@@ -40,9 +40,9 @@ public class AddUser extends HttpServlet {
                 date+"," + bio+"," + userType+"," + className+"," + club);
 
         UserInfoModel AddClub = new UserInfoModel(club);
-        //ClassRepository.addClub(AddClub);
+        ClassRepository.addClub(AddClub);
 
-        UserInfoModel AddUser = new UserInfoModel(email, password, firstName, lastName,
+        UserInfoModel AddUser = new UserInfoModel(ID,email, password, firstName, lastName,
                 date, bio,userType, className, club);
         ClassRepository.addUser(AddUser);
         req.getRequestDispatcher("StartSide.jsp").forward(req, resp);

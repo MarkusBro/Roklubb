@@ -78,7 +78,7 @@
 
         <!--- Innholdet i table --->
         <%
-            List<ClassResultatsModel> tableModelList = ClassRepository.getClassResultat();
+            List<ClassResultatsModel> tableModelList = (List<ClassResultatsModel>) request.getAttribute("List");
             for (ClassResultatsModel model : tableModelList) {
         %>
 

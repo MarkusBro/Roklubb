@@ -30,8 +30,8 @@ CREATE TABLE userType (
 DROP TABLE IF EXISTS user;
 CREATE TABLE user (
                       id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                      email VARCHAR(127) UNIQUE NOT NULL,
-                      password varchar(255) NOT NULL,
+                      email VARCHAR(127) UNIQUE,
+                      password varchar(255),
                       fname VARCHAR(35) NOT NULL,
                       lname VARCHAR(35) NOT NULL,
                       dob DATE NOT NULL,
@@ -41,7 +41,6 @@ CREATE TABLE user (
                       club_name VARCHAR(50) NOT NULL,
 
                       FOREIGN KEY (userType_name) REFERENCES userType (name)
-
                           ON UPDATE RESTRICT ,
                       FOREIGN KEY (class_name) REFERENCES class (name)
                           ON DELETE CASCADE
@@ -60,6 +59,8 @@ CREATE TABLE testResult (
                             id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
                             testBatch_id SMALLINT UNSIGNED, -- A testResult will not be public unless it has a testBatch_id and has been published.
                             user_id SMALLINT UNSIGNED,
+                            rank INTEGER,
+                            score DOUBLE,
                             class_name_static VARCHAR(15) NOT NULL,
                             5kmT TIME,
                             5kmW DECIMAL(5,1),
