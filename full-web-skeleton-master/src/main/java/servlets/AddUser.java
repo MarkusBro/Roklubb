@@ -24,7 +24,7 @@ public class AddUser extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
-        resp.setContentType("text/plain; charset=UTF-8");
+
         String ID = req.getParameter("ID");
         String email = req.getParameter("email");
         String password = req.getParameter("passord");
