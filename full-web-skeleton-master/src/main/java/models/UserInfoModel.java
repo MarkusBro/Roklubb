@@ -29,6 +29,14 @@ public class UserInfoModel {
     public UserInfoModel(String club) {
         this.club = club;
     }
+    public UserInfoModel(String ID, String firstName, String lastName, String userType, String className, String club){
+        this.ID = ID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userType = userType;
+        this.className = className;
+        this.club = club;
+    }
     public UserInfoModel(String ID, String firstName, String lastName, String dob, String userType, String className, String club){
         this.ID = ID;
         this.firstName = firstName;

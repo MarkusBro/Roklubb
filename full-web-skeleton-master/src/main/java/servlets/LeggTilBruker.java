@@ -34,14 +34,15 @@ public class LeggTilBruker extends AbstractAppServlet {
         protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException{
             String id = req.getParameter("id");
-            String firstNme = req.getParameter("firstname");
-            String lastname = req.getParameter("lastname");
+            String firstName = req.getParameter("firstname");
+            String lastName = req.getParameter("lastname");
             String club = req.getParameter("club");
-            String usertype = req.getParameter("usertype");
+            String className = req.getParameter("classname");
+            String userType = req.getParameter("usertype");
 
-            UserInfoModel addBruker = new UserInfoModel(id, firstNme, lastname, club,
-                    usertype);
-            req.setAttribute(addBruker "addBruker");
+            UserInfoModel addBruker = new UserInfoModel(id, firstName, lastName, club,
+                    className,userType);
+            req.setAttribute("addBruker", addBruker);
         }
     }
 
