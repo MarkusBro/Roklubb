@@ -47,15 +47,15 @@
                 List<UserInfoModel> tableModelList = (List<UserInfoModel>) request.getAttribute("userlist");
                 for (UserInfoModel model : tableModelList) {
             %>
-            <form method="post" action="/LeggTilTest">
+            <form method="post" action="/LeggTilBruker">
             <tr>
-                <td><%=model.getFirstName()%>
+                <td name="firstname"><%=model.getFirstName()%>
                 </td>
-                <td><%=model.getLastName()%>
+                <td name="lastname"><%=model.getLastName()%>
                 </td>
-                <td><%=model.getClub()%>
+                <td name="club"><%=model.getClub()%>
                 </td>
-                <td><%=model.getUserType()%>
+                <td name="usertype"><%=model.getUserType()%>
                 </td>
                 <td><button class="btn btn-info" type="submit">Got to user</button></td>
                 <input name="id" type="hidden" value="<%=model.getID()%>">
