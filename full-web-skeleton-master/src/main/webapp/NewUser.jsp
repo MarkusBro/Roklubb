@@ -80,24 +80,25 @@
                         <option value="C jenter">Junior C Jenter</option>
                     </select>
                     <br/>
-                    <br/>
-                    <textarea id="bio" name="bio" rows="4" cols="46" placeholder="Bio (Maks 200 tegn)" maxlength="200"></textarea>
+                    <textarea id="bio" name="bio" rows="4" cols="46" placeholder="Bio (Maks 200 tegn)"
+                              maxlength="200"></textarea>
                     <input class="btn btn-primary" type="submit" name="" value="Legg til bruker">
                 </div>
             </form>
 
         </div>
-
     </div>
+</div>
 </body>
 </html>
 <style>
 
-    h2{
-        position:absolute;
+    h2 {
+        position: absolute;
         top: 7%;
         left: 28%;
     }
+
     .newUser {
         width: 400px;
         height: 600px;
@@ -106,28 +107,33 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         box-shadow: 0px 1px 10px 1px #000;
         overflow: hidden;
         display: inline-block;
     }
-    .upper-container{
+
+    .upper-container {
         height: 40px;
         background: #FFFF00;
     }
-    textarea{
+
+    textarea {
         position: absolute;
-        top: 76%;
+        top: 78%;
         left: 1.5%;
     }
+
     .textbox {
         justify-content: space-between;
         font-weight: bold;
     }
+
     input {
         padding-bottom: 20px;
         width: 200px;
     }
+
     input[name=email] {
         border: 2px solid darkgrey;
         border-radius: 10px;
@@ -136,51 +142,58 @@
         top: 14%;
         left: 5%;
     }
+
     input[name=passord] {
         border: 2px solid darkgrey;
         border-radius: 10px;
         width: 90%;
-        position:absolute;
+        position: absolute;
         top: 55%;
         left: 5%;
     }
+
     input[name=dob] {
         border: 2px solid darkgrey;
         border-radius: 10px;
         width: 90%;
-        position:absolute;
+        position: absolute;
         top: 38%;
         left: 5%;
     }
+
     input[name=fname] {
         border: 2px solid darkgrey;
         border-radius: 10px;
-        width: 90%;position:absolute;
+        width: 90%;
+        position: absolute;
         top: 22%;
         left: 5%;
     }
+
     input[name=lname] {
         border: 2px solid darkgrey;
         border-radius: 10px;
         width: 90%;
-        position:absolute;
+        position: absolute;
         top: 30%;
         left: 5%;
     }
+
     input[name=club] {
         border: 2px solid darkgrey;
         border-radius: 10px;
         width: 90%;
-        position:absolute;
+        position: absolute;
         top: 47%;
         left: 5%;
     }
+
     input[type=submit] {
-        position:absolute;
+        position: absolute;
         top: 89%;
         left: 25%;
         padding: 15px 35px;
-        background: #000000 ;
+        background: #000000;
         border: none;
         color: white;
         border-radius: 30px;
@@ -189,9 +202,10 @@
         font-weight: bold;
         transition: all .3s ease-in;
     }
-    input[type=submit]:hover{
+
+    input[type=submit]:hover {
         background: transparent;
         color: black;
-        border: 2px solid #000000 ;
+        border: 2px solid #000000;
     }
 </style>
