@@ -29,7 +29,7 @@
     <div class="newUser">
         <div class="upper-container">
 
-            <form action="${pageContext.request.contextPath}/AddUser" method="POST">
+            <form action="${pageContext.request.contextPath}/NewUser" method="POST">
                 <br/>
                 <p><u><h2>Legg til ny bruker</h2></u></p>
                 <br/>

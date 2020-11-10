@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(name = "LeggTil", urlPatterns = {"/LeggTil"})
+@WebServlet(name = "AddUser", urlPatterns = {"/AddUser"})
 public class LeggTilUtøver extends AbstractAppServlet {
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

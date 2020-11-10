@@ -1,6 +1,6 @@
 <%@ page import="models.UserInfoModel" %>
 <%@ page import="java.util.List" %>
-<%@ page import="tools.repository.ClassRepository" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Markus Brødsjø
   Date: 29.10.2020
@@ -47,7 +47,7 @@
                 List<UserInfoModel> tableModelList = (List<UserInfoModel>) request.getAttribute("userlist");
                 for (UserInfoModel model : tableModelList) {
             %>
-            <form method="post" action="/LeggTilBruker">
+            <form method="post" action="${pageContext.request.contextPath}/LeggTilBruker">
             <tr>
                 <td name="firstname"><%=model.getFirstName()%>
                 </td>
