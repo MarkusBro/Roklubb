@@ -13,8 +13,8 @@ import java.sql.SQLException;
 import java.text.DateFormat;
 import java.util.Date;
 
-@WebServlet(name = "adduser", urlPatterns = {"/AddUser"})
-public class AddUser extends HttpServlet {
+@WebServlet(name = "NewUser", urlPatterns = {"/NewUser"})
+public class NewUser extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -40,6 +40,7 @@ public class AddUser extends HttpServlet {
                 date+"," + bio+"," + userType+"," + className+"," + club);
 
         UserInfoModel AddClub = new UserInfoModel(club);
+        //en if her om å sjekke om klubben er i databasen
         ClassRepository.addClub(AddClub);
 
         UserInfoModel AddUser = new UserInfoModel(ID,email, password, firstName, lastName,

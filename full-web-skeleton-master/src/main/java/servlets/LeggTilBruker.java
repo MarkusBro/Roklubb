@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "LeggTilBruker", urlPatterns = {"/LeggTilBruker"})
@@ -40,9 +41,13 @@ public class LeggTilBruker extends AbstractAppServlet {
             String className = req.getParameter("classname");
             String userType = req.getParameter("usertype");
 
-            UserInfoModel addBruker = new UserInfoModel(id, firstName, lastName, club,
-                    className,userType);
+
+            List<UserInfoModel> addBruker = new ArrayList<>(id, firstName, lastName, club
+            , className, userType);
+
+
             req.setAttribute("addBruker", addBruker);
+            req.getRequestDispatcher("LeggInnTest.jsp").forward(req,resp);
         }
     }
 
