@@ -2,7 +2,7 @@
 <%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.
-  User: Markus Brï¿½dsjï¿½
+  User: Markus Brødsjø
   Date: 29.10.2020
   Time: 09.13
   To change this template use File | Settings | File Templates.
@@ -32,7 +32,7 @@
 
 
     <div class="container">
-        <p><u><h2>Velg utï¿½ver</h2></u></p>
+        <p><u><h2>Velg utøver</h2></u></p>
         <table class="table">
             <thead>
             <tr>
@@ -71,9 +71,7 @@
             %>
             </tbody>
         </table>
-        <button class="button1" onclick="location.href='LeggInnTest.jsp'" type="button">
-            Legg til utï¿½ver
-        </button>
+
     </div>
 
 </div>
