@@ -49,17 +49,19 @@
             %>
             <form method="post" action="${pageContext.request.contextPath}/LeggTilBruker">
             <tr>
-                <td name="firstname"><%=model.getFirstName()%>
+                <td value="<%=model.getFirstName()%>"><%=model.getFirstName()%>
                 </td>
+                <input name="firstname" type="hidden" value="<%=model.getFirstName()%>">
                 <td name="lastname"><%=model.getLastName()%>
                 </td>
+                <input name="lastname" type="hidden" value="<%=model.getLastName()%>">
                 <td name="club"><%=model.getClub()%>
                 </td>
                 <td name="usertype"><%=model.getUserType()%>
                 </td>
-                <td name="classname"><%=model.getClassName()%>
+                <td name="classname" id="test"><%=model.getClassName()%>
                 </td>
-                <td><button class="btn btn-info" type="submit">Got to user</button></td>
+                <td><button class="btn btn-info" type="submit">Velg utøver</button></td>
                 <input name="id" type="hidden" value="<%=model.getID()%>">
             </tr>
             </form>
