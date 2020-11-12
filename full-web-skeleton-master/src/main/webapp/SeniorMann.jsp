@@ -1,6 +1,4 @@
-<%@ page import="models.TableModel" %>
 <%@ page import="java.util.List" %>
-<%@ page import="tools.repository.UserRepository" %>
 <%@ page import="models.UserInfoModel" %>
 <%@ page import="models.ClassResultatsModel" %>
 <%@ page import="tools.repository.ClassRepository" %>
@@ -120,5 +118,5 @@
     });
 </script>
 
-</body>
+
 </html>

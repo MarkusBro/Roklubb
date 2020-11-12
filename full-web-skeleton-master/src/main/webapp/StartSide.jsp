@@ -25,8 +25,6 @@
             Min side
         </button>
     </div>
-    <p>Click here to send a request for a user.
-        <a href="RequestUserNameFromDb">get user</a></p>
 
     <div class="container1">
         <h1>Testresultater</h1>
@@ -46,7 +44,7 @@
             Registrer
         </button>
     </div>
-
+</div>
 </body>
 </html>
 
