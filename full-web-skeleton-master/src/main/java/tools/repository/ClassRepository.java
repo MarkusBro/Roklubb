@@ -1,7 +1,6 @@
 package tools.repository;
 
 import models.ClassResultatsModel;
-import models.TableModel;
 import models.UserInfoModel;
 import tools.DbTool;
 
