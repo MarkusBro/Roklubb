@@ -27,8 +27,7 @@
             <button class="button" onclick="location.href='Login.jsp'" type="button">
                 Logg inn</button>
         </div>
-        <p>Click here to send a request for a user.
-            <a href="RequestUserNameFromDb">get user</a></p>
+
         <div class="content">
             <h1>Testresultater</h1>
             <button class="button" onclick="location.href='ReceiveUserNameFromDb'" type="button">

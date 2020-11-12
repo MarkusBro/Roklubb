@@ -1,4 +1,5 @@
-<%--
+<%@ page import="models.UserInfoModel" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: nikgus
   Date: 26/10/2020
@@ -11,11 +12,11 @@
 
 <title>Start Page</title>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Testing testing</title>
-    <%@ page contentType="text/html; charset=UTF-8" %>
+    <%@ page contentType="text/html; charset=ISO-8859-1" %>
     <%@include file="cssLoader.jsp" %>
 
     <title>Profile Card</title>
@@ -53,6 +54,7 @@
             <tr>
                 <th>Fornavn</th>
                 <th>Etternavn</th>
+                <th>Test id</th>
                 <th>5000m(tid)</th>
                 <th>5000m(watt)</th>
                 <th>2000m(tid)</th>
@@ -62,14 +64,13 @@
                 <th>Ligg.ro(kg)</th>
                 <th>Squat(%)</th>
                 <th>Squat(kg)</th>
-                <th>Bevegelighet</th>
             </tr>
             <tr>
                 <td><input type="text"/></td>
                 <td><input type="text"/></td>
                 <td><input type="time" step="1"/></td>
                 <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
+                <td><input type="text"/></td>
                 <td><input type="text"/></td>
                 <td><input type="text"/></td>
                 <td><input type="text"/></td>
@@ -79,168 +80,77 @@
                 <td><input type="text"/></td>
             </tr>
 
+            <%
+                List<UserInfoModel> tableModelList = (List<UserInfoModel>) request.getAttribute("addBruker");
+                for (UserInfoModel model : tableModelList) {
+            %>
+            <form action="" method="post">
             <tr>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
+                <input name="id" type="hidden"><%=model.getID()%>
+                <input name="testbatchid" type="hidden">
+                <input name="classnamestatic" type="hidden"><%=model.getClassName()%>
+                <td><%=model.getFirstName()%>
+                </td>
+                <td><%=model.getLastName()%>
+                </td>
+                <td><input name="testbatchid" type="number" value=""></td>
+                <td><input name="kmT5" type="time" step="1"/></td>
+                <td><input name="kmW5" type="number"></td>
+                <td><input name="kmT2" type="time" step="1"/></td>
+                <td><input name="kmW2" type="number"></td>
+                <td><input name="W60s" type="number"/></td>
+                <td><input name="percentlierow" type="number" min="0" max="100"/></td>
+                <td><input name="kglierow" type="number"/></td>
+                <td><input name="percentsquat" type="number" min="0" max="100"/></td>
+                <td><input name="kgsquat" type="number"/></td>
             </tr>
-            <tr>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-            </tr>
-            <tr>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-            </tr>
-            <tr>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-            </tr>
-            <tr>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-            </tr>
-            <tr>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-            </tr>
-            <tr>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-            </tr>
-            <tr>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-            </tr>
-            <tr>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-            </tr>
-            <tr>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-            </tr>
-            <tr>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-            </tr>
+
+            <%
+                }
+            %>
+            </form>
         </table>
+        <button class="button3" onclick="location.href=''" type="submit">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle-fill" fill="currentColor"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+            </svg>
+            Legg inn resultater
+        </button>
 
+
+        <div class="card-container">
+            <div class="upper-container">
+                <br />
+                <br />
+                <br />
+                <div>
+                    <p><u><h2>Legg til utøvere</h2></u></p>
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <div>
+                    <h3>Trykk på "legg til utøvere" <br /> for å legge til en eller flere utøvere</h3>
+                </div>
+
+                <button class="button2" onclick="location.href='LeggTil'" type="button">  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                </svg>  Legg til utøvere</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
 
 
 <style>
-    body{
+    body {
         margin: 0px;
         padding: 0px;
         box-sizing: border-box;
@@ -269,28 +179,9 @@
         top: 0%;
         left: 0%;
     }
-
-    #results td, #results th, #results input {
-        border: 1px solid #ddd;
-        padding: 2px;
-        width: 100px;
-        white-space: nowrap;
-    }
-
-    #results tr:nth-child(even){background-color: #f2f2f2;}
-
-    #results tr:hover {background-color: #ddd;}
-
-    #results th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: yellow;
-        color: black;
-    }
-    .buttonBack2{
+    .card-container .button2{
         padding: 20px 35px;
-        background: #000000 ;
+        background: #000000;
         border: none;
         color: white;
         border-radius: 30px;
@@ -302,14 +193,14 @@
         top: 80%;
         left: 10%;
     }
-    .buttonBack2:hover{
-        background: #000000;
-        color: white;
+    .card-container .button2:hover{
+        background: transparent;
+        color: black;
         border: 2px solid #000000 ;
     }
-    .confirm{
+    .buttonBack2{
         padding: 20px 35px;
-        background: #000000 ;
+        background: #000000;
         border: none;
         color: white;
         border-radius: 30px;
@@ -324,7 +215,7 @@
     .confirm:hover{
         background: #000000;
         color: white;
-        border: 2px solid #000000 ;
+        border: 2px solid #000000;
     }
 
 </style>
