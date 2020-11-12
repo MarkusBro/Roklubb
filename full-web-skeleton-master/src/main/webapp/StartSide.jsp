@@ -52,7 +52,7 @@
     .container1{
         width: 350px;
         height: 200px;
-        background: #E7D721;
+        background: #F1E10B;
         border-radius: 6px;
         position: absolute;
         top: 50%;
@@ -66,7 +66,7 @@
     .container2{
         width: 350px;
         height: 200px;
-        background: #E7D721;
+        background: #F1E10B;
         border-radius: 6px;
         position: absolute;
         top: 50%;

@@ -115,7 +115,7 @@
 
     .upper-container {
         height: 40px;
-        background: #FFFF00;
+        background: #F1E10B;
     }
 
     textarea {

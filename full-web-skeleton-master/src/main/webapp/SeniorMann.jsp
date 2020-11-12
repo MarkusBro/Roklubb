@@ -37,9 +37,6 @@
 
         }
 
-        .navbar {
-            background-color: silver;
-        }
 
     </style>
 
@@ -49,7 +46,7 @@
 
 <div class="navbar">
     <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo">
-    <button class="button2">Min side</button>
+    <button class="button">Min side</button>
 
 </div>
 <div class="Table">
