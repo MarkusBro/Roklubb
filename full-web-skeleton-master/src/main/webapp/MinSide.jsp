@@ -22,10 +22,10 @@
     <div class="navbar">
         <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo">
 
-
         <button class="button" type="button">
             Min side
         </button>
+    </div>
 
         <div>
             <button class="buttonBack" onclick="location.href='StartSide.jsp'" type="button">
@@ -121,7 +121,6 @@
                         Hva skal vi ha her?
                     </button>
                 </div>
-            </div>
         </div>
     </div>
 </div>
@@ -154,7 +153,7 @@
 
     .upper-container {
         height: 70px;
-        background: #FFFF00;
+        background: #F1E10B;
     }
 
     .image-container {

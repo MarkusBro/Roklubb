@@ -98,7 +98,7 @@
     .button1 {
         width: 250px;
         height: 200px;
-        background: #E6D831;
+        background: #F1E10B;
         border-radius: 6px;
         border-color: grey;
         font-size: 25px;
@@ -116,7 +116,7 @@
     .button2 {
         width: 250px;
         height: 200px;
-        background: #E6D831;
+        background: #F1E10B;
         border-radius: 6px;
         border-color: grey;
         font-size: 25px;
@@ -134,7 +134,7 @@
     .button3 {
         width: 250px;
         height: 200px;
-        background: #E6D831;
+        background: #F1E10B;
         border-radius: 6px;
         font-size: 25px;
         color: black;
@@ -151,7 +151,7 @@
     .button4 {
         width: 250px;
         height: 200px;
-        background: #E6D831;
+        background: #F1E10B;
         border-radius: 6px;
         font-size: 25px;
         color: black;
@@ -168,7 +168,7 @@
     .button5 {
         width: 250px;
         height: 200px;
-        background: #E6D831;
+        background: #F1E10B;
         border-radius: 6px;
         font-size: 25px;
         color: black;
@@ -185,7 +185,7 @@
     .button6 {
         width: 250px;
         height: 200px;
-        background: #E6D831;
+        background: #F1E10B;
         border-radius: 6px;
         font-size: 25px;
         color: black;
@@ -202,7 +202,7 @@
     .button7 {
         width: 250px;
         height: 200px;
-        background: #E6D831;
+        background: #F1E10B;
         border-radius: 6px;
         font-size: 25px;
         color: black;
@@ -219,7 +219,7 @@
     .button8 {
         width: 250px;
         height: 200px;
-        background: #E6D831;
+        background: #F1E10B;
         border-radius: 6px;
         font-size: 25px;
         color: black;

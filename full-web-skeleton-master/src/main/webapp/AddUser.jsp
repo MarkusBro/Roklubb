@@ -98,28 +98,6 @@
         top: 15%;
         left: 0%;
     }
-
-    .button1 {
-        padding: 12px 26px;
-        background: #000000;
-        border: none;
-        color: white;
-        border-radius: 30px;
-        font-size: 12px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: all .3s ease-in;
-        position: absolute;
-        top: 90%;
-        left: 30px;
-    }
-
-    .button1:hover {
-        background: transparent;
-        color: #000000;
-        border: 2px solid #000000;
-    }
-
     .fa fa-user {
         color: black;
     }
