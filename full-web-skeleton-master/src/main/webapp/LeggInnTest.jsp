@@ -7,7 +7,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE html>
-
 <html>
 
 <title>Start Page</title>
@@ -49,8 +48,7 @@
         </div>
 
         <div class="card-container2">
-
-            <table style="columns: 3; width: 80%" id="results">
+            <table style="width: 80%" id="results">
             <tr>
                 <th>Fornavn</th>
                 <th>Etternavn</th>
@@ -65,25 +63,9 @@
                 <th>Squat(%)</th>
                 <th>Squat(kg)</th>
             </tr>
-            <tr>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="time" step="1"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-                <td><input type="text"/></td>
-            </tr>
 
-            <%
-                List<UserInfoModel> tableModelList = (List<UserInfoModel>) request.getAttribute("addBruker");
-                for (UserInfoModel model : tableModelList) {
-            %>
+                <%List<UserInfoModel> tableModelList = (List<UserInfoModel>) request.getAttribute("addBruker");
+                for (UserInfoModel model : tableModelList) {%>
             <form action="" method="post">
             <tr>
                 <input name="id" type="hidden"><%=model.getID()%>
@@ -110,38 +92,7 @@
             %>
             </form>
         </table>
-        <button class="button3" onclick="location.href=''" type="submit">
-            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle-fill" fill="currentColor"
-                 xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-            </svg>
-            Legg inn resultater
-        </button>
 
-
-        <div class="card-container">
-            <div class="upper-container">
-                <br />
-                <br />
-                <br />
-                <div>
-                    <p><u><h2>Legg til utøvere</h2></u></p>
-                </div>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <div>
-                    <h3>Trykk på "legg til utøvere" <br /> for å legge til en eller flere utøvere</h3>
-                </div>
-
-                <button class="button2" onclick="location.href='LeggTil'" type="button">  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                </svg>  Legg til utøvere</button>
-            </div>
         </div>
     </div>
 </div>
@@ -156,7 +107,6 @@
         box-sizing: border-box;
         background: #f1f1f1;
     }
-
     .card-container2{
         width: 1260px;
         height: 420px;
@@ -170,7 +120,6 @@
         overflow: hidden;
         display: inline-block;
     }
-
     #results {
         font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
         border-collapse: collapse;
@@ -179,7 +128,25 @@
         top: 0%;
         left: 0%;
     }
-    .card-container .button2{
+    #results td, #results th, #results input {
+        border: 1px solid #ddd;
+        padding: 2px;
+        width: 100px;
+    }
+    #results tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    #results tr:hover {
+        background-color: #ddd;
+    }
+    #results th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: yellow;
+        color: black;
+    }
+    .buttonBack2{
         padding: 20px 35px;
         background: #000000;
         border: none;
@@ -193,12 +160,12 @@
         top: 80%;
         left: 10%;
     }
-    .card-container .button2:hover{
-        background: transparent;
-        color: black;
-        border: 2px solid #000000 ;
+    .buttonBack2:hover{
+        background: #000000;
+        color: white;
+        border: 2px solid #000000;
     }
-    .buttonBack2{
+    .confirm{
         padding: 20px 35px;
         background: #000000;
         border: none;
@@ -217,5 +184,4 @@
         color: white;
         border: 2px solid #000000;
     }
-
 </style>
