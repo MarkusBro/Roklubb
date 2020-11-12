@@ -2,7 +2,7 @@
 <%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.
-  User: Markus Brødsjø
+  User: Markus Brï¿½dsjï¿½
   Date: 29.10.2020
   Time: 09.13
   To change this template use File | Settings | File Templates.
@@ -30,16 +30,17 @@
              onclick="location.href='index.jsp'">
     </div>
 
-    <div class="container leggTil">
-        <h2>Velg utøver:</h2>
+
+    <div class="container">
+        <p><u><h2>Velg utï¿½ver</h2></u></p>
         <table class="table">
             <thead>
             <tr>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Club</th>
-                <th>Usertype</th>
-                <th>Go to user</th>
+                <th>Fornavn:</th>
+                <th>Etternavn:</th>
+                <th>Klubb:</th>
+                <th>Brukertype:</th>
+                <th>Klasse:</th>
             </tr>
             </thead>
             <tbody>
@@ -61,7 +62,7 @@
                 </td>
                 <td name="classname" id="test"><%=model.getClassName()%>
                 </td>
-                <td><button class="btn btn-info" type="submit">Velg utøver</button></td>
+                <td><button class="btn btn-info" type="submit">Velg</button></td>
                 <input name="id" type="hidden" value="<%=model.getID()%>">
             </tr>
             </form>
@@ -71,7 +72,7 @@
             </tbody>
         </table>
         <button class="button1" onclick="location.href='LeggInnTest.jsp'" type="button">
-            Legg til utøver
+            Legg til utï¿½ver
         </button>
     </div>
 
@@ -80,19 +81,24 @@
 </html>
 
 <style>
-    .leggTil {
-        background-color: darkgray;
-        box-sizing: border-box;
+    .container {
+        width: 700px;
+        height: 500px;
+        background: #FFF;
+        border-radius: 6px;
         position: absolute;
-        display: grid;
-        place-items: center;
-        top: 15%;
-
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0px 1px 10px 1px #000;
+        overflow: hidden;
+        display: inline-block;
     }
-
     .table {
         background-color: #f1f1f1;
-        width: 50%;
+        position: absolute;
+        top: 15%;
+        left: 0%;
     }
 
     .button1 {
@@ -118,6 +124,11 @@
 
     .fa fa-user {
         color: black;
+    }
+     h2{
+        position: absolute;
+        top: 5%;
+        left: 40%;
     }
 
 </style>
