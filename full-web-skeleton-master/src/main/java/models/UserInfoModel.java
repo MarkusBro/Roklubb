@@ -3,16 +3,16 @@ package models;
 
 
 public class UserInfoModel {
-    String ID;
-    String email;
-    String password;
-    String firstName;
-    String lastName;
-    String dob;
-    String bio;
-    String userType;
-    String className;
-    String club;
+    private String ID;
+    private String email;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String dob;
+    private String bio;
+    private String userType;
+    private String className;
+    private String club;
 
     public UserInfoModel(String ID,String email, String password, String firstName, String lastName, String dob, String bio, String userType, String className, String club) {
         this.ID = ID;

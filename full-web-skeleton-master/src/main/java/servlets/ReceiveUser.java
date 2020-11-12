@@ -4,17 +4,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.registry.infomodel.User;
 
-import models.TableModel;
 import models.UserInfoModel;
 import tools.repository.ClassRepository;
-import tools.repository.UserRepository;
 
 
 @WebServlet(name = "ReceiveUser", urlPatterns = {"/ReceiveUser"})
