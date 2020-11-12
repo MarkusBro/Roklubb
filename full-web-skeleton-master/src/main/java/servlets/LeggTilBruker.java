@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.List;
 
 @WebServlet(name = "LeggTilBruker", urlPatterns = {"/LeggTilBruker"})
@@ -38,13 +40,23 @@ public class LeggTilBruker extends AbstractAppServlet {
             String firstName = req.getParameter("firstname");
             String lastName = req.getParameter("lastname");
             String club = req.getParameter("club");
-            String className = req.getParameter("classname");
+            String className = req.getParameter("test");
             String userType = req.getParameter("usertype");
 
+            List<String> values = new ArrayList<String>(req.getParameterMap().keySet());
+            values.forEach(name -> System.out.println(name + "Inne i foreach") );
 
-            List<UserInfoModel> addBruker = new ArrayList<>(id, firstName, lastName, club
-            , className, userType);
+            System.out.println("userType = " + userType);
+            System.out.println("className = " + className);
+            System.out.println("club = " + club);
+            System.out.println("lastName = " + lastName);
+            System.out.println("firstName = " + firstName);
+            System.out.println("id = " + id);
 
+            List<UserInfoModel> addBruker = new ArrayList<>();
+
+            UserInfoModel userInfo = new UserInfoModel(id, firstName, lastName, club, className,userType);
+            addBruker.add(userInfo);
 
             req.setAttribute("addBruker", addBruker);
             req.getRequestDispatcher("LeggInnTest.jsp").forward(req,resp);
