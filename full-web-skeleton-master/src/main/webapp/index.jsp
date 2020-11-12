@@ -21,20 +21,54 @@
             <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo"
                  onclick="location.href='index.jsp'">
 
-            <button class="button2" onclick="location.href='StartSide.jsp'" type="button">
-                Register deg</button>
+            <button class="buttonReg" onclick="location.href='StartSide.jsp'" type="button">
+                Registrer deg
+            </button>
             <button class="button" onclick="location.href='Login.jsp'" type="button">
                 Logg inn</button>
         </div>
-        <p>Click here to send a request for a user.
-            <a href="RequestUserNameFromDb">get user</a></p>
+
         <div class="content">
-            <small>Ny startside for testresultater</small>
             <h1>Testresultater</h1>
-            <button class="button" onclick="location.href='ReceiveUserNameFromDb'" type="button">
+            <button class="buttonSearch" onclick="location.href='ReceiveUserNameFromDb'" type="button">
                 Søk</button>
         </div>
     </div>
 
 </body>
 </html>
+
+<style>
+    .buttonSearch{
+    font-size: 25px;
+    color:white;
+    padding: 10px 25px;
+    background: black;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    }
+    .buttonSearch:hover {
+        background: black;
+        color: white;
+        border: 2px solid #000000;
+    }
+    .buttonReg{
+        font-size: 25px;
+        color:white;
+        padding: 10px 25px;
+        background: black;
+        border-radius: 20px;
+        outline: none;
+        cursor: pointer;
+        position: absolute;
+        left: 50%;
+    }
+    .buttonReg:hover {
+        background: black;
+        color: white;
+        border: 2px solid #000000;
+    }
+</style>

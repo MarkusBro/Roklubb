@@ -5,7 +5,7 @@
   Time: 21.18
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html; charset=UTF-8" %>
+
 <html>
 <head>
     <title>cssLoader</title>
@@ -31,34 +31,41 @@
 
 
     }
-
     .logo {
         width: 200px;
         cursor: pointer;
-
-
+        position: absolute;
+        left: 2%;
     }
-
     .navbar {
-        width: 100%;
-        height: 15%;
+        width: 97%;
+        background: #F1E10B;
+        height: 10%;
+        position: absolute;
+        top: 2%;
+        left: 1.5%;
+        border-radius: 30px;
         margin: auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-
     }
 
     .button {
         font-size: 25px;
-        color: rgb(255, 255, 255);
+        color:white;
         padding: 10px 25px;
-        background: transparent;
-        border: 1px solid rgb(255, 255, 255);
+        background: black;
         border-radius: 20px;
         outline: none;
         cursor: pointer;
+        position: absolute;
+        left: 80%;
+    }
+        .button:hover {
+        background: black;
+        color: white;
+        border: 2px solid #000000;
     }
 
     .button2 {
