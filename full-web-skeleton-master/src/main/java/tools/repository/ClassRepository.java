@@ -1,6 +1,7 @@
 package tools.repository;
 
 import models.ClassResultatsModel;
+import models.TestModel;
 import models.UserInfoModel;
 import tools.DbTool;
 
@@ -39,6 +40,44 @@ public class ClassRepository {
             insertNewUser.setString(8, user.getLastName());
             insertNewUser.setString(9, user.getDob());
             insertNewUser.setString(10, user.getBio());
+            insertNewUser.execute();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+    }
+
+    public static void addTestSenior(TestModel test) {
+        Connection db = null;
+        PreparedStatement insertNewUser = null;
+        try {
+            db = DbTool.getINSTANCE().dbLoggIn();
+            db.setCatalog("roklubb");
+            String query = "INSERT INTO roklubb.testResult (user_id, testBatch_id, `rank`, score, class_name_static, 5kmT, 5kmW, 2kmT, 2kmW, 60sW, percentLieRow, kgLieRow, percentSquat, kgSquat) " +
+                    "VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?)";
+            insertNewUser = db.prepareStatement(query);
+            insertNewUser.setString(1, test.getNameId());
+            insertNewUser.setString(2, test.getTestBatchId());
+            insertNewUser.setString(3, test.getRank());
+            insertNewUser.setString(4, test.getScore());
+            insertNewUser.setString(5, test.getClassNameStatic());
+            insertNewUser.setString(6, test.getKmt5());
+            insertNewUser.setString(7, test.getKmW5());
+            insertNewUser.setString(8, test.getKmT2());
+            insertNewUser.setString(9, test.getKmW2());
+            insertNewUser.setString(10, test.getW60s());
+            insertNewUser.setString(11, test.getPercentLieRow());
+            insertNewUser.setString(12, test.getKgLieRow());
+            insertNewUser.setString(13, test.getPercentSquat());
+            insertNewUser.setString(14, test.getKgSquat());
+
+
             insertNewUser.execute();
 
         } catch (SQLException throwables) {

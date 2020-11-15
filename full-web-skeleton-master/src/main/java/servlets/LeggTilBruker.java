@@ -30,9 +30,7 @@ public class LeggTilBruker extends AbstractAppServlet {
         @Override
         protected void doGet(HttpServletRequest req, HttpServletResponse resp)
                 throws ServletException, IOException {
-            List<ClassResultatsModel> useResult = ClassRepository.getClassResultat();
-            req.setAttribute("List", useResult);
-            req.getRequestDispatcher("SeniorMann.jsp").forward(req, resp);
+
         }
         protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException{
@@ -40,7 +38,7 @@ public class LeggTilBruker extends AbstractAppServlet {
             String firstName = req.getParameter("firstname");
             String lastName = req.getParameter("lastname");
             String club = req.getParameter("club");
-            String className = req.getParameter("test");
+            String className = req.getParameter("classname");
             String userType = req.getParameter("usertype");
 
             List<String> values = new ArrayList<String>(req.getParameterMap().keySet());
