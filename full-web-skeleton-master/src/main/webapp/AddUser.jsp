@@ -60,8 +60,9 @@
                 </td>
                 <td name="usertype"><%=model.getUserType()%>
                 </td>
-                <td name="classname" id="test"><%=model.getClassName()%>
+                <td value="classname"><%=model.getClassName()%>
                 </td>
+                <input name="classname" type="hidden" value="<%=model.getClassName()%>">
                 <td><button class="btn btn-info" type="submit">Velg</button></td>
                 <input name="id" type="hidden" value="<%=model.getID()%>">
             </tr>
