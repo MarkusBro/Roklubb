@@ -28,14 +28,14 @@
     <div class="navbar">
         <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo">
 
-        <button class="button" type="button">
+        <button class="button" onclick="location.href='MinSide.jsp'" type="button">
             Min side
         </button>
     </div>
 
 
     <div>
-        <button class="buttonBack2" onclick="location.href='MinSide.jsp'" type="button">
+        <button class="buttonBack2" onclick="location.href='AddUser'" type="button">
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-90deg-left" fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
@@ -112,26 +112,38 @@
                 <%
                     }
                 %>
-
             </table>
-            <div>
-                <button class="confirm" type="submit">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check2-circle" fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                              d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                        <path fill-rule="evenodd"
-                              d="M8 2.5A5.5 5.5 0 1 0 13.5 8a.5.5 0 0 1 1 0 6.5 6.5 0 1 1-3.25-5.63.5.5 0 1 1-.5.865A5.472 5.472 0 0 0 8 2.5z"/>
-                    </svg>
-                    Bekreft
-                </button>
-            </div>
         </div>
-    </form>
-</div>
 
+        <div>
+            <button class="btnSend" onclick="openForm()" type="button"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check2-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                <path fill-rule="evenodd"
+                      d="M8 2.5A5.5 5.5 0 1 0 13.5 8a.5.5 0 0 1 1 0 6.5 6.5 0 1 1-3.25-5.63.5.5 0 1 1-.5.865A5.472 5.472 0 0 0 8 2.5z"/>
+            </svg>  Send inn</button>
+        </div>
+
+        <div class="form-popup" id="myForm">
+            <form class="form-container" action="/action_page.php">
+                <h1>Er resultatene riktig og ønsker du å sende inn?</h1>
+                <button type="button" class="btnCancel" onclick="closeForm()">Angre</button>
+                <button type="button" class="btnConfirm"  onclick="location.href='RegisterReceipt.jsp'">Bekreft</button>
+            </form>
+        </div>
+</div>
 </body>
 </html>
+
+/* JavaScript metode */
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>
 
 
 <style>
@@ -208,7 +220,7 @@
         border: 2px solid #000000;
     }
 
-    .confirm {
+    .btnSend {
         padding: 20px 35px;
         background: #000000;
         border: none;
@@ -223,9 +235,76 @@
         left: 80%;
     }
 
-    .confirm:hover {
+    .btnSend:hover {
         background: #000000;
         color: white;
         border: 2px solid #000000;
+    }
+
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+
+    /* Popup container */
+    .form-popup {
+        width: 500px;
+        height: 200px;
+        display: none;
+        position: absolute;
+        top: 40%;
+        left: 30%;
+        border: 3px solid #f1f1f1;
+        border-radius: 20px;
+        z-index: 9;
+        background-color: black;
+    }
+    /* Angre knapp */
+    .form-popup .btnCancel {
+        padding: 15px 30px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 15px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all .3s ease-in;
+        position: absolute;
+        top: 60%;
+        left: 20%;
+    }
+
+    .btnCancel:hover {
+        background: red;
+        color: white;
+        border: 2px solid #000000;
+    }
+    /* Bekreft knapp */
+    .form-popup .btnConfirm {
+        padding: 15px 30px;
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 15px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all .3s ease-in;
+        position: absolute;
+        top: 60%;
+        left: 60%;
+    }
+
+    .btnConfirm:hover {
+        background: green;
+        color: white;
+        border: 2px solid #000000;
+    }
+
+    h1 {
+        position: absolute;
+        top: 4%;
+        left: 10%;
+        font-size: 18px;
+        color: white;
     }
 </style>
