@@ -23,6 +23,9 @@
     <div class="navbar">
         <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo"
              onclick="location.href='index.jsp'">
+        <button class="button" onclick="location.href='MinSide.jsp'" type="button">
+            Min side
+        </button>
     </div>
 
 
