@@ -46,7 +46,7 @@ public class NewUser extends HttpServlet {
         UserInfoModel AddUser = new UserInfoModel(ID,email, password, firstName, lastName,
                 date, bio,userType, className, club);
         ClassRepository.addUser(AddUser);
-        req.getRequestDispatcher("StartSide.jsp").forward(req, resp);
+        req.getRequestDispatcher("AddUserReceipt.jsp").forward(req, resp);
 
 
     }
