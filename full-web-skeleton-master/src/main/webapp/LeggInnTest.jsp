@@ -81,13 +81,13 @@
                         <input name="testbatchid" type="number" >
                     </label></td>
                     <td><label>
-                        <input name="kmT5" placeholder="HH:MM:SS" datatype="time" >
+                        <input name="kmT5" placeholder="HH:MM:SS" type="text" pattern="^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$" >
                     </label></td>
                     <td><label>
                         <input name="kmW5" type="number">
                     </label></td>
                     <td><label>
-                        <input name="kmT2" placeholder="HH:MM:SS" datatype="time">
+                        <input name="kmT2" placeholder="HH:MM:SS" type="text" pattern="^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$">
                     </label></td>
                     <td><label>
                         <input name="kmW2" type="number">
@@ -125,12 +125,11 @@
         </div>
 
         <div class="form-popup" id="myForm">
-            <form class="form-container" action="/action_page.php">
                 <h1>Er resultatene riktig og ønsker du å sende inn?</h1>
                 <button type="button" class="btnCancel" onclick="closeForm()">Angre</button>
-                <button type="button" class="btnConfirm"  onclick="location.href='RegisterReceipt.jsp'">Bekreft</button>
-            </form>
+                <button type="submit" class="btnConfirm">Bekreft</button>
         </div>
+    </form>
 </div>
 </body>
 </html>

@@ -81,7 +81,7 @@
     }
 
     h2 {
-        color: black;
+        color: green;
         font-size: 80px;
         font-weight: bold;
         position: absolute;

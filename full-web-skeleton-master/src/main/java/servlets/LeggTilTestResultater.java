@@ -54,7 +54,7 @@ public class LeggTilTestResultater extends AbstractAppServlet {
                 percentlierow, kglierow, percentsquat, kgsquat);
         ClassRepository.addTestSenior(AddTest);
 
-        //req.getRequestDispatcher("AddUser.jsp").forward(req, resp);
+        req.getRequestDispatcher("RegisterReceipt.jsp").forward(req, resp);
 
     }
 }
