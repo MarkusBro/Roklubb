@@ -23,13 +23,13 @@
     <div class="navbar">
         <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo"
              onclick="location.href='index.jsp'">
-        <button class="button" onclick="location.href='MinSide.jsp'" type="button">
+        <button class="button" onclick="location.href='MyPage.jsp'" type="button">
             Min side
         </button>
     </div>
 
     <div>
-        <button class="buttonBack2" onclick="location.href='MinSide.jsp'" type="button">
+        <button class="buttonBack2" onclick="location.href='MyPage.jsp'" type="button">
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-90deg-left" fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
@@ -95,7 +95,7 @@
                     <br/>
                     <textarea id="bio" name="bio" rows="4" cols="46" placeholder="Bio (Maks 200 tegn)"
                               maxlength="200"></textarea>
-                    <input class="btn btn-primary" type="submit"  name="" value="Legg til bruker">
+                    <input class="btn btn-primary" type="submit" name="" value="Legg til bruker">
                 </div>
             </form>
         </div>

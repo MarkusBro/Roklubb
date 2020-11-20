@@ -13,8 +13,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "Leggtiltestresultater", urlPatterns = {"/Leggtiltestresultater"})
-public class LeggTilTestResultater extends AbstractAppServlet {
+@WebServlet(name = "AddTestResults", urlPatterns = {"/AddTestResults"})
+public class AddTestResults extends AbstractAppServlet {
 
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
