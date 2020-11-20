@@ -15,8 +15,8 @@ import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.List;
 
-@WebServlet(name = "LeggTilBruker", urlPatterns = {"/LeggTilBruker"})
-public class LeggTilBruker extends AbstractAppServlet {
+@WebServlet(name = "AddNewUser", urlPatterns = {"/AddNewUser"})
+public class AddNewUser extends AbstractAppServlet {
         @Override
         protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -57,7 +57,7 @@ public class LeggTilBruker extends AbstractAppServlet {
             addBruker.add(userInfo);
 
             req.setAttribute("addBruker", addBruker);
-            req.getRequestDispatcher("LeggInnTest.jsp").forward(req,resp);
+            req.getRequestDispatcher("AddTest.jsp").forward(req,resp);
         }
     }
 

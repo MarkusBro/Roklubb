@@ -28,7 +28,7 @@
     <div class="navbar">
         <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo">
 
-        <button class="button" onclick="location.href='MinSide.jsp'" type="button">
+        <button class="button" onclick="location.href='MyPage.jsp'" type="button">
             Min side
         </button>
     </div>
@@ -44,7 +44,8 @@
             Tilbake
         </button>
     </div>
-    <form action="${pageContext.request.contextPath}/Leggtiltestresultater" method="post">
+
+    <form action="${pageContext.request.contextPath}/AddTestResults" method="post">
         <div class="card-container2">
 
             <table style="width: 80%" id="results">
