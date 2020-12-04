@@ -2,11 +2,24 @@ package models;
 
 public class TestBatchModel {
     private String id;
-    private String testdato;
+    private String testdate;
+    private String enddate;
 
-    public TestBatchModel(String id, String testdato){
+    public TestBatchModel(String id, String testdate, String enddate) {
+        this.id = id;
+        this.testdate = testdate;
+        this.enddate = enddate;
+    }
+    public TestBatchModel(String id){
         this.id=id;
-        this.testdato=testdato;
+    }
+
+    public String getEnddate() {
+        return enddate;
+    }
+
+    public void setEnddate(String enddate) {
+        this.enddate = enddate;
     }
 
     public String getId() {
@@ -17,11 +30,11 @@ public class TestBatchModel {
         this.id = id;
     }
 
-    public String getTestdato() {
-        return testdato;
+    public String getTestdate() {
+        return testdate;
     }
 
-    public void setTestdato(String testdato) {
-        this.testdato = testdato;
+    public void setTestdate(String testdato) {
+        this.testdate = testdate;
     }
 }

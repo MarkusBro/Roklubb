@@ -40,6 +40,7 @@ public class AddNewUser extends AbstractAppServlet {
             String club = req.getParameter("club");
             String className = req.getParameter("classname");
             String userType = req.getParameter("usertype");
+            String testId = req.getParameter("testid");
 
             List<String> values = new ArrayList<String>(req.getParameterMap().keySet());
             values.forEach(name -> System.out.println(name + "Inne i foreach") );
@@ -55,7 +56,7 @@ public class AddNewUser extends AbstractAppServlet {
 
             UserInfoModel userInfo = new UserInfoModel(id, firstName, lastName, club, className,userType);
             addBruker.add(userInfo);
-
+            req.setAttribute("testid", testId);
             req.setAttribute("addBruker", addBruker);
             req.getRequestDispatcher("AddTest.jsp").forward(req,resp);
         }

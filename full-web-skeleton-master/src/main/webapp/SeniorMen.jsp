@@ -32,9 +32,11 @@
     <jsp:include page="./cssLoader.jsp"></jsp:include>
     <style>
         .Table {
+            position: absolute;
+            top: 15%;
             margin-left: 15%;
             margin-right: 15%;
-
+            background-color: #f1f1f1;
         }
 
 
@@ -43,7 +45,7 @@
 </head>
 <body>
 
-
+<div class="hero">
 <div class="navbar">
     <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo">
     <button class="button" onclick="location.href='MyPage.jsp'" type="button">Min side</button>
@@ -58,9 +60,9 @@
     Tilbake
 </button>
 
-</div>
+<div class="box"></div>
 <div class="Table">
-    <h1>Senior menn</h1>
+
     <table id="tableTest" class="table table-striped table-bordered" style="width:100%" align="table">
         <!--- Innholdet over table --->
         <thead>
@@ -116,6 +118,7 @@
 
 
 </div>
+</div>
 </body>
 
 <!--- Script som kjører DataTable / tableTest er table.id --->
@@ -127,6 +130,14 @@
 </html>
 
 <style>
+    .box{
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        background-color: #f1f1f1;
+        padding: 250px;
+        width: 300px;
+    }
     .buttonBack {
         padding: 20px 35px;
         background: #000000;

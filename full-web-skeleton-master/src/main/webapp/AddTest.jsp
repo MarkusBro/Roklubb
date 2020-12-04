@@ -52,7 +52,7 @@
                 <tr>
                     <th>Fornavn</th>
                     <th>Etternavn</th>
-                    <th>Test id</th>
+                    <th>Test nummer</th>
                     <th>5000m(tid)</th>
                     <th>5000m(watt)</th>
                     <th>2000m(tid)</th>
@@ -74,13 +74,12 @@
                     <input name="classnamestatic" type="hidden" value="<%=model.getClassName()%>">
                     <input name="rank" type="hidden" value="1">
                     <input name="score" type="hidden" value="100">
+                    <input name="testbatchid" type="hidden" value="<%=request.getAttribute("testid")%>">
                     <td><%=model.getFirstName()%>
                     </td>
                     <td><%=model.getLastName()%>
                     </td>
-                    <td><label>
-                        <input name="testbatchid" type="number" >
-                    </label></td>
+                    <td><%=request.getAttribute("testid")%></td>
                     <td><label>
                         <input name="kmT5" placeholder="HH:MM:SS" type="text" pattern="^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$" >
                     </label></td>
