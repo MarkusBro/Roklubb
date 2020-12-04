@@ -35,7 +35,7 @@
     </div>
 
     <div>
-        <button class="buttonBack" onclick="location.href='MyPage.jsp'" type="button">
+        <button class="buttonBack" onclick="location.href='StartPage.jsp'" type="button">
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-90deg-left" fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
@@ -46,43 +46,58 @@
     </div>
 
     <div class="container">
-        <p><u><h2>Velg test eller legg inn en ny test og velg testen</h2></u></p>
+        <p><u><h2>Velg test eller legg inn en ny test</h2></u></p>
         <div class="testdato">
-            <form method="post" action="">
-                <input name=testbatch type="datetime-local">
-                <input type="submit">
+            <form method="post" action="${pageContext.request.contextPath}/newtestbatch">
+                <label>
+                    <input name=date type="datetime-local">
+                </label>
+                <input type="submit" value="Legg til test">
             </form>
         </div>
-        <table class="table">
-            <thead>
-            <tr>
-                <td>Testdato</td>
-            </tr>
-            </thead>
-            <%
-                List<TestBatchModel> testBatchModels = ClassRepository.getTestBatch();
-                for (TestBatchModel model : testBatchModels) {
-            %>
 
-            <tr style="background-color: white">
-                <td><%=model.getTestdato()%>
-                </td>
-            </tr>
+        <div id="table-wrapper">
+            <div id="table-scroll">
 
-            <%
-                }
-            %>
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>Testdato</td>
+                            <td>Nummer</td>
+                            <td>Velg Test</td>
+                        </tr>
+                        </thead>
+                        <%
+                            List<TestBatchModel> testBatchModels = ClassRepository.getTestBatch();
+                            for (TestBatchModel model : testBatchModels) {
+                        %>
+                        <form action="${pageContext.request.contextPath}/addtestbatch" method="post">
+                        <tr>
+                            <input name="id" type="hidden" value="<%=model.getId()%>">
+                            <td><%=model.getTestdate()%>
+                            </td>
+                            <td><%=model.getId()%>
+                            </td>
+                            <td><button class="btn btn-info" type="submit">Velg</button></td>
+                        </tr>
+                        </form>
+                        <%
+                            }
+                        %>
 
-        </table>
+                    </table>
+
+            </div>
+        </div>
+
     </div>
-
 </div>
 </body>
 </html>
 
 <style>
     .container {
-        width: 700px;
+        width: 600px;
         height: 500px;
         background: #FFF;
         border-radius: 6px;
@@ -97,15 +112,41 @@
 
     .testdato {
         position: absolute;
-        top: 10%;
-        left: 50%;
+        top: 15%;
+        left: 5%;
     }
 
-    .table {
-        background-color: #f1f1f1;
+    #table-wrapper {
+        position: relative;
+        top: 25%;
+        left: 2%;
+    }
+
+    #table-scroll {
+        height: 300px;
+        overflow: auto;
+        margin-top: 20px;
+    }
+
+    #table-wrapper table {
+        width: 100%;
+
+
+    }
+
+    #table-wrapper table * {
+        color: black;
+        border: 2px solid black;
+
+    }
+
+    #table-wrapper table thead th .text {
         position: absolute;
-        top: 15%;
-        left: 0%;
+        top: -20px;
+        z-index: 2;
+        height: 50px;
+        width: 35%;
+
     }
 
     .fa fa-user {

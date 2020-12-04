@@ -125,7 +125,7 @@ public class ClassRepository {
             db.setCatalog("roklubb");
             String query = "INSERT INTO roklubb.testBatch (startDate) VALUES (?)";
             insertNewUser = db.prepareStatement(query);
-            insertNewUser.setString(1, test.getTestdato());
+            insertNewUser.setString(1, test.getTestdate());
             insertNewUser.execute();
 
         } catch (SQLException throwables) {
@@ -149,12 +149,12 @@ public class ClassRepository {
         try {
             db = DbTool.getINSTANCE().dbLoggIn();
             ResultSet rs = null;
-            String query = "";
+            String query = "SELECT * FROM roklubb.testBatch order by startDate desc ";
             prepareStatement = db.prepareStatement(query);
             rs = prepareStatement.executeQuery();
             while (rs.next()) {
                 TestBatchModel getTestModel = new
-                        TestBatchModel(rs.getString("id"), rs.getString("startDate"));
+                        TestBatchModel(rs.getString("id"), rs.getString("startDate"), rs.getString("endDate"));
 
                 toReturn.add(getTestModel);
 
