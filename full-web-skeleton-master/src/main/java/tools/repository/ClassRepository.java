@@ -1,6 +1,8 @@
 package tools.repository;
 
 import models.ClassResultatsModel;
+import models.TestBatchModel;
+import models.TestModel;
 import models.UserInfoModel;
 import tools.DbTool;
 
@@ -51,6 +53,44 @@ public class ClassRepository {
             }
         }
     }
+
+    public static void addTestSenior(TestModel test) {
+        Connection db = null;
+        PreparedStatement insertNewUser = null;
+        try {
+            db = DbTool.getINSTANCE().dbLoggIn();
+            db.setCatalog("roklubb");
+            String query = "INSERT INTO roklubb.testResult (user_id, testBatch_id, `rank`, score, class_name_static, 5kmT, 5kmW, 2kmT, 2kmW, 60sW, percentLieRow, kgLieRow, percentSquat, kgSquat) " +
+                    "VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?)";
+            insertNewUser = db.prepareStatement(query);
+            insertNewUser.setString(1, test.getNameId());
+            insertNewUser.setString(2, test.getTestBatchId());
+            insertNewUser.setString(3, test.getRank());
+            insertNewUser.setString(4, test.getScore());
+            insertNewUser.setString(5, test.getClassNameStatic());
+            insertNewUser.setString(6, test.getKmt5());
+            insertNewUser.setString(7, test.getKmW5());
+            insertNewUser.setString(8, test.getKmT2());
+            insertNewUser.setString(9, test.getKmW2());
+            insertNewUser.setString(10, test.getW60s());
+            insertNewUser.setString(11, test.getPercentLieRow());
+            insertNewUser.setString(12, test.getKgLieRow());
+            insertNewUser.setString(13, test.getPercentSquat());
+            insertNewUser.setString(14, test.getKgSquat());
+
+
+            insertNewUser.execute();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+    }
     public static void addClub(UserInfoModel user) {
         Connection db = null;
         PreparedStatement insertNewUser = null;
@@ -71,6 +111,62 @@ public class ClassRepository {
                 throwables.printStackTrace();
             }
         }
+    }
+
+    /**
+     * inserter en ny testbatch.
+     * @param test: et test objekt som inneholder info om testen.(datoen)
+     */
+    public static void addTestBatch(TestBatchModel test) {
+        Connection db = null;
+        PreparedStatement insertNewUser = null;
+        try {
+            db = DbTool.getINSTANCE().dbLoggIn();
+            db.setCatalog("roklubb");
+            String query = "INSERT INTO roklubb.testBatch (startDate) VALUES (?)";
+            insertNewUser = db.prepareStatement(query);
+            insertNewUser.setString(1, test.getTestdate());
+            insertNewUser.execute();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+    }
+
+    /*
+    Henter ut alle testbatchene
+     */
+    public static List<TestBatchModel> getTestBatch() {
+        Connection db = null;
+        PreparedStatement prepareStatement = null;
+        List<TestBatchModel> toReturn = new ArrayList<>();
+        try {
+            db = DbTool.getINSTANCE().dbLoggIn();
+            ResultSet rs = null;
+            String query = "SELECT * FROM roklubb.testBatch order by startDate desc ";
+            prepareStatement = db.prepareStatement(query);
+            rs = prepareStatement.executeQuery();
+            while (rs.next()) {
+                TestBatchModel getTestModel = new
+                        TestBatchModel(rs.getString("id"), rs.getString("startDate"), rs.getString("endDate"));
+
+                toReturn.add(getTestModel);
+
+            }
+            rs.close();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return toReturn;
+
     }
     /**
      * henter ut spesifikk person fra databasen

@@ -21,7 +21,7 @@
             <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo"
                  onclick="location.href='index.jsp'">
 
-            <button class="buttonReg" onclick="location.href='StartSide.jsp'" type="button">
+            <button class="buttonReg" onclick="location.href='StartPage.jsp'" type="button">
                 Registrer deg
             </button>
             <button class="button" onclick="location.href='Login.jsp'" type="button">

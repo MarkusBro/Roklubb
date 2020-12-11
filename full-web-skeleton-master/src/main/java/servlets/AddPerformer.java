@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "AddUser", urlPatterns = {"/AddUser"})
-public class LeggTilUtøver extends AbstractAppServlet {
+public class AddPerformer extends AbstractAppServlet {
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

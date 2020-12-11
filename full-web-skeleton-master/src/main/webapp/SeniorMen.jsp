@@ -32,9 +32,11 @@
     <jsp:include page="./cssLoader.jsp"></jsp:include>
     <style>
         .Table {
+            position: absolute;
+            top: 15%;
             margin-left: 15%;
             margin-right: 15%;
-
+            background-color: #f1f1f1;
         }
 
 
@@ -43,14 +45,24 @@
 </head>
 <body>
 
-
+<div class="hero">
 <div class="navbar">
     <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo">
-    <button class="button">Min side</button>
+    <button class="button" onclick="location.href='MyPage.jsp'" type="button">Min side</button>
 
 </div>
+<button class="buttonBack" onclick="location.href='Classes.jsp'" type="button">
+    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-90deg-left" fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+              d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4z"/>
+    </svg>
+    Tilbake
+</button>
+
+<div class="box"></div>
 <div class="Table">
-    <h1>Senior menn</h1>
+
     <table id="tableTest" class="table table-striped table-bordered" style="width:100%" align="table">
         <!--- Innholdet over table --->
         <thead>
@@ -106,6 +118,7 @@
 
 
 </div>
+</div>
 </body>
 
 <!--- Script som kjører DataTable / tableTest er table.id --->
@@ -114,6 +127,35 @@
         $('#tableTest').DataTable();
     });
 </script>
-
-
 </html>
+
+<style>
+    .box{
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        background-color: #f1f1f1;
+        padding: 250px;
+        width: 300px;
+    }
+    .buttonBack {
+        padding: 20px 35px;
+        background: #000000;
+        border: none;
+        color: white;
+        border-radius: 30px;
+        font-size: 15px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all .3s ease-in;
+        position: absolute;
+        top: 90%;
+        left: 10%;
+    }
+
+    .buttonBack:hover {
+        background: #000000;
+        color: white;
+        border: 2px solid #000000;
+    }
+</style>

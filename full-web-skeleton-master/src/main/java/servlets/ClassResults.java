@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(name = "SeniorMann", urlPatterns = {"/SeniorMann"})
-public class ClassResultats extends AbstractAppServlet{
+@WebServlet(name = "SeniorMen", urlPatterns = {"/SeniorMen"})
+public class ClassResults extends AbstractAppServlet{
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -28,6 +28,6 @@ public class ClassResultats extends AbstractAppServlet{
             throws ServletException, IOException {
         List<ClassResultatsModel> useResult = ClassRepository.getClassResultat();
         req.setAttribute("List", useResult);
-        req.getRequestDispatcher("SeniorMann.jsp").forward(req, resp);
+        req.getRequestDispatcher("SeniorMen.jsp").forward(req, resp);
     }
     }

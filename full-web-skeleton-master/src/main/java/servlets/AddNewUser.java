@@ -15,8 +15,8 @@ import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.List;
 
-@WebServlet(name = "LeggTilBruker", urlPatterns = {"/LeggTilBruker"})
-public class LeggTilBruker extends AbstractAppServlet {
+@WebServlet(name = "AddNewUser", urlPatterns = {"/AddNewUser"})
+public class AddNewUser extends AbstractAppServlet {
         @Override
         protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -30,9 +30,7 @@ public class LeggTilBruker extends AbstractAppServlet {
         @Override
         protected void doGet(HttpServletRequest req, HttpServletResponse resp)
                 throws ServletException, IOException {
-            List<ClassResultatsModel> useResult = ClassRepository.getClassResultat();
-            req.setAttribute("List", useResult);
-            req.getRequestDispatcher("SeniorMann.jsp").forward(req, resp);
+
         }
         protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException{
@@ -40,8 +38,9 @@ public class LeggTilBruker extends AbstractAppServlet {
             String firstName = req.getParameter("firstname");
             String lastName = req.getParameter("lastname");
             String club = req.getParameter("club");
-            String className = req.getParameter("test");
+            String className = req.getParameter("classname");
             String userType = req.getParameter("usertype");
+            String testId = req.getParameter("testid");
 
             List<String> values = new ArrayList<String>(req.getParameterMap().keySet());
             values.forEach(name -> System.out.println(name + "Inne i foreach") );
@@ -57,9 +56,9 @@ public class LeggTilBruker extends AbstractAppServlet {
 
             UserInfoModel userInfo = new UserInfoModel(id, firstName, lastName, club, className,userType);
             addBruker.add(userInfo);
-
+            req.setAttribute("testid", testId);
             req.setAttribute("addBruker", addBruker);
-            req.getRequestDispatcher("LeggInnTest.jsp").forward(req,resp);
+            req.getRequestDispatcher("AddTest.jsp").forward(req,resp);
         }
     }
 
