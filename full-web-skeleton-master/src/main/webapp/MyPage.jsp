@@ -71,13 +71,16 @@
                         </svg>
                     </h3>
 
-                    <p><u><h4>Ola Nordmann</h4></u></p>
+                    <p><u><h4> <% if(session.getAttribute("firstname") != null)
+                        out.println((String)session.getAttribute("firstname"));
+                        out.println((String)session.getAttribute("lastname"));
+                    %></h4></u></p>
                     <br/>
 
-                    <p><u><h5>Trener</h5></u></p>
+                    <p><u><h5><%out.println((String)session.getAttribute("userType_name")); %> </h5></u></p>
                     <br/>
 
-                    <p><u><h6>Kristiansand roklubb</h6></u></p>
+                    <p><u><h6> <%out.println((String)session.getAttribute("club_name")); %> </h6></u></p>
                 </div>
                 <div>
                     <text>Hva skal vi ha på høyre siden her? >

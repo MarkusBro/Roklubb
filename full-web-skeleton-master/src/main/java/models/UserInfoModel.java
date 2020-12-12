@@ -26,6 +26,9 @@ public class UserInfoModel {
         this.className = className;
         this.club = club;
     }
+    public UserInfoModel(){
+
+    }
     public UserInfoModel(String club) {
         this.club = club;
     }
