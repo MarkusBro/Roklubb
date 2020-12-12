@@ -60,7 +60,18 @@
         outline: none;
         cursor: pointer;
         position: absolute;
-        left: 80%;
+        left: 75%;
+    }
+    .LogOut {
+        font-size: 25px;
+        color:white;
+        padding: 10px 25px;
+        background: black;
+        border-radius: 20px;
+        outline: none;
+        cursor: pointer;
+        position: absolute;
+        left: 85%;
     }
         .button:hover {
         background: black;
