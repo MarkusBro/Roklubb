@@ -26,6 +26,15 @@
         <button class="button" onclick="location.href='MyPage.jsp'" type="button">
             Min side
         </button>
+
+        <form action="${pageContext.request.contextPath}/LogOutServlet" method="post">
+            <button class="LogOut" type="submit"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M5.578 4.437a5 5 0 1 0 4.922.044l.5-.866a6 6 0 1 1-5.908-.053l.486.875z"/>
+                <path fill-rule="evenodd" d="M7.5 8V1h1v7h-1z"/>
+            </svg>
+                Logg ut
+            </button>
+        </form>
     </div>
 
     <div>
@@ -41,7 +50,17 @@
 
     <div class="newUser">
         <div class="upper-container">
-
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <form action="${pageContext.request.contextPath}/NewUser" method="POST">
                 <br/>
                 <p><u><h2>Legg til ny bruker</h2></u></p>
@@ -55,23 +74,6 @@
                     <input type="date" placeholder="Fødselsdato" name="dob" value="">
                     <input type="text" placeholder="Klubb" name="club" value="">
                     <input type="password" placeholder="Passord" name="passord" value="">
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
                     <br/>
                     <label for="usertype">Velg din brukertype:</label>
                     <select charset="UTF-8" name="usertype" id="usertype">
@@ -139,6 +141,8 @@
     .textbox {
         justify-content: space-between;
         font-weight: bold;
+        position: absolute;
+        top: 20%;
     }
 
     input {
