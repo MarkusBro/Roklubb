@@ -27,12 +27,6 @@
     </div>
 
     <div class="container1">
-         <% if(session.getAttribute("firstname") != null)
-        out.println((String)session.getAttribute("firstname"));
-         out.println((String)session.getAttribute("lastname"));
-
-
-         %>
 
         <h1>Testresultater</h1>
         <button class="button1" onclick="location.href='Classes.jsp'" type="button"> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
