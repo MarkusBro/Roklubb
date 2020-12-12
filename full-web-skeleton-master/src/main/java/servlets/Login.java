@@ -1,7 +1,7 @@
 package servlets;
 
+import models.UserInfoModel;
 import tools.repository.UserDAO;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import javax.servlet.*;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "Login", urlPatterns = {"/Login"})
 public class Login extends HttpServlet {
@@ -30,7 +32,17 @@ public class Login extends HttpServlet {
 
         try {
             if (userdb.checklogin(name,password)){
+                HttpSession session=request.getSession();
+                UserInfoModel user = userdb.getUser(name);
+                session.setAttribute("firstname",user.getFirstName());
+                session.setAttribute("lastname",user.getLastName());
+                session.setAttribute("userType_name",user.getUserType());
+                session.setAttribute("club_name",user.getClub());
+
+
+
                 request.getRequestDispatcher("StartPage.jsp").forward(request,response);
+
 
             }else {
                 String error = "Feil brukernavn eller passord";
