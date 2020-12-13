@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 
 <html>
-
+<%if(session.getAttribute("firstname")== null){
+    response.sendRedirect(request.getContextPath() + "/Login.jsp");
+}
+%>
 
 <title>Start Page</title>
 <head>
