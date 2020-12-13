@@ -39,6 +39,7 @@ public class UserDAO {
             user.setLastName(result.getString("lname"));
             user.setUserType(result.getString("userType_name"));
             user.setClub(result.getString("club_name"));
+            user.setEmail(result.getString("email"));
 
         }
             return user;
