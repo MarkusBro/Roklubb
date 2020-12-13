@@ -80,17 +80,27 @@
                         </svg>
                     </h3>
 
+
                     <p><u><h4> <% if(session.getAttribute("firstname") != null)
                         out.println((String)session.getAttribute("firstname"));
                         out.println((String)session.getAttribute("lastname"));
                     %></h4></u></p>
                     <br/>
 
+
                     <p><u><h5><%out.println((String)session.getAttribute("userType_name")); %> </h5></u></p>
                     <br/>
 
                     <p><u><h6> <%out.println((String)session.getAttribute("club_name")); %> </h6></u></p>
+
+                    <p><u> <h7><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+                        </svg>  <%out.println((String)session.getAttribute("email"));%>
+                    </h7></u></p>
+
+
                 </div>
+
                 <div>
                     <text>Hva skal vi ha på høyre siden her? >
                     </text>
@@ -233,6 +243,16 @@
         position: absolute;
         top: 25%;
         left: 44%;
+    }
+    .card-container h7 {
+        color: #000000;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        transform: translate(-207px, 10px);
+        position: absolute;
+        top: 31%;
+        left: 40.7%;
     }
 
     .card-container text {

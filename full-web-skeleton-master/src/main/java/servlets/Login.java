@@ -38,6 +38,7 @@ public class Login extends HttpServlet {
                 session.setAttribute("lastname",user.getLastName());
                 session.setAttribute("userType_name",user.getUserType());
                 session.setAttribute("club_name",user.getClub());
+                session.setAttribute("email",user.getEmail());
 
 
 
