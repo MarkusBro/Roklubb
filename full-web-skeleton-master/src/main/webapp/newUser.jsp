@@ -6,27 +6,30 @@
   To change this template use File | Settings | File Templates.
 --%>
 <html>
+<%if(session.getAttribute("firstname")== null){
+    response.sendRedirect(request.getContextPath() + "/login.jsp");
+}
+%>
 <head>
     <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>New User</title>
+    <title>NewUser</title>
     <%@ page contentType="text/html; charset=ISO-8859-1" %>
-    <link href="${pageContext.request.contextPath}/assets/css/style.css" REL="stylesheet" TYPE="text/css">
+    <%@include file="cssLoader.jsp" %>
 
 </head>
 <body>
 
-
 <div class="hero">
-
     <div class="navbar">
         <img src="${pageContext.request.contextPath}/assets/img/norges-roforbund-logo.png" class="logo"
              onclick="location.href='index.jsp'">
-        <button class="button" onclick="location.href='myPage.jsp'" type="button">
-            Min side
+        <button class="button" onclick="location.href='myPage.jsp'" type="button"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+            <path d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"/>
+            <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+        </svg> Min side
         </button>
-
         <form action="${pageContext.request.contextPath}/LogOutServlet" method="post">
             <button class="LogOut" type="submit"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M5.578 4.437a5 5 0 1 0 4.922.044l.5-.866a6 6 0 1 1-5.908-.053l.486.875z"/>
@@ -50,17 +53,7 @@
 
     <div class="newUser">
         <div class="upper-container">
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+
             <form action="${pageContext.request.contextPath}/NewUser" method="POST">
                 <br/>
                 <p><u><h2>Legg til ny bruker</h2></u></p>
@@ -74,6 +67,23 @@
                     <input type="date" placeholder="Fødselsdato" name="dob" value="">
                     <input type="text" placeholder="Klubb" name="club" value="">
                     <input type="password" placeholder="Passord" name="passord" value="">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                     <br/>
                     <label for="usertype">Velg din brukertype:</label>
                     <select charset="UTF-8" name="usertype" id="usertype">
@@ -141,8 +151,6 @@
     .textbox {
         justify-content: space-between;
         font-weight: bold;
-        position: absolute;
-        top: 20%;
     }
 
     input {

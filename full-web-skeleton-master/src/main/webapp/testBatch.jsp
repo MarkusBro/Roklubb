@@ -7,6 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<%if(session.getAttribute("firstname")== null){
+    response.sendRedirect(request.getContextPath() + "/login.jsp");
+}
+%>
 <head>
     <title>Title</title>
 </head>
