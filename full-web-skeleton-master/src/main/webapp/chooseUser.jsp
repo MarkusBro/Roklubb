@@ -14,6 +14,10 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<%if(session.getAttribute("firstname")== null){
+    response.sendRedirect(request.getContextPath() + "/login.jsp");
+}
+%>
 <meta charset="UTF-8">
 
 <head>
