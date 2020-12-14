@@ -13,12 +13,12 @@
 <title>Start Page</title>
 <head>
     <meta charset="UTF-8">
-    <%@include file="cssLoader.jsp" %>
     <%@ page contentType="text/html; charset=UTF-8" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Testing testing</title>
+    <title>Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="${pageContext.request.contextPath}/assets/css/style.css" REL="stylesheet" TYPE="text/css">
 </head>
 <body>
 
@@ -27,7 +27,7 @@
 
 
     <div class="navbar">
-        <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo"
+        <img src="${pageContext.request.contextPath}/assets/img/norges-roforbund-logo.png" class="logo"
              onclick="location.href='index.jsp'">
     </div>
 

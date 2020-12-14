@@ -11,7 +11,7 @@
 
 <html>
 <%if(session.getAttribute("firstname")== null){
-    response.sendRedirect(request.getContextPath() + "/Login.jsp");
+    response.sendRedirect(request.getContextPath() + "/login.jsp");
 }
 %>
 <head>
@@ -20,9 +20,9 @@
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NewUser</title>
+    <title>AddUser</title>
     <%@ page contentType="text/html; charset=ISO-8859-1" %>
-    <%@include file="cssLoader.jsp" %>
+    <link href="${pageContext.request.contextPath}/assets/css/style.css" REL="stylesheet" TYPE="text/css">
 
 </head>
 <body>
@@ -31,9 +31,9 @@
 <div class="hero">
 
     <div class="navbar">
-        <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo"
+        <img src="${pageContext.request.contextPath}/assets/img/norges-roforbund-logo.png" class="logo"
              onclick="location.href='index.jsp'">
-        <button class="button" onclick="location.href='MyPage.jsp'" type="button">
+        <button class="button" onclick="location.href='myPage.jsp'" type="button">
             Min side
         </button>
 
@@ -48,7 +48,7 @@
     </div>
 
     <div>
-        <button class="buttonBack" onclick="location.href='AddTestBatch.jsp'" type="button">
+        <button class="buttonBack" onclick="location.href='addTestBatch.jsp'" type="button">
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-90deg-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4z"/>
             </svg>

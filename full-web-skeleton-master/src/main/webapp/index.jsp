@@ -3,14 +3,14 @@
 <html>
 
 
-    <title>Start Page</title>
+
     <head>
+        <title>Start Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Testing testing</title>
         <%@ page contentType="text/html; charset=UTF-8" %>
-        <%@include file="cssLoader.jsp"%>
+        <link href="${pageContext.request.contextPath}/assets/css/style.css" REL="stylesheet" TYPE="text/css">
 
     </head>
 <body>
@@ -18,13 +18,13 @@
 
 
         <div class="navbar">
-            <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo"
+            <img src="${pageContext.request.contextPath}/assets/img/norges-roforbund-logo.png" class="logo"
                  onclick="location.href='index.jsp'">
 
-            <button class="buttonReg" onclick="location.href='StartPage.jsp'" type="button">
+            <button class="buttonReg" onclick="location.href='startPage.jsp'" type="button">
                 Registrer deg
             </button>
-            <button class="button" onclick="location.href='Login.jsp'" type="button">
+            <button class="button" onclick="location.href='login.jsp'" type="button">
                 Logg inn</button>
         </div>
 

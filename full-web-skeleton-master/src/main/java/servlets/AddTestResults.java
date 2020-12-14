@@ -54,7 +54,7 @@ public class AddTestResults extends AbstractAppServlet {
                 percentlierow, kglierow, percentsquat, kgsquat);
         ClassRepository.addTestSenior(AddTest);
 
-        req.getRequestDispatcher("RegisterReceipt.jsp").forward(req, resp);
+        req.getRequestDispatcher("registerReceipt.jsp").forward(req, resp);
 
     }
 }
