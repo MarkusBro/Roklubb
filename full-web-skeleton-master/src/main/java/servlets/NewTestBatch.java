@@ -27,7 +27,7 @@ public class NewTestBatch extends HttpServlet {
 
         TestBatchModel AddtestBatch = new TestBatchModel(id, date, enddate);
         ClassRepository.addTestBatch(AddtestBatch);
-        req.getRequestDispatcher("AddTestBatch.jsp").forward(req, resp);
+        req.getRequestDispatcher("addTestBatch.jsp").forward(req, resp);
 
 
     }

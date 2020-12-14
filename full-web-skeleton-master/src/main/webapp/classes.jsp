@@ -17,18 +17,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Testing testing</title>
     <%@ page contentType="text/html; charset=UTF-8" %>
-    <%@include file="cssLoader.jsp" %>
-
-    <title>Profile Card</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Classes</title>
+    <link href="${pageContext.request.contextPath}/assets/css/style.css" REL="stylesheet" TYPE="text/css">
 </head>
 
 
 <body>
 <div class="hero">
     <div class="navbar">
-        <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo">
-        <button class="button" onclick="location.href='MyPage.jsp'" type="button">
+        <img src="${pageContext.request.contextPath}/assets/img/norges-roforbund-logo.png" class="logo">
+        <button class="button" onclick="location.href='myPage.jsp'" type="button">
             Min side
         </button>
 
@@ -42,7 +40,7 @@
         </form>
 
     </div>
-    <button class="buttonBack" onclick="location.href='StartPage.jsp'" type="button">
+    <button class="buttonBack" onclick="location.href='startPage.jsp'" type="button">
         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-90deg-left" fill="currentColor"
              xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd"

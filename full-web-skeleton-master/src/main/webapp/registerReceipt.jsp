@@ -7,11 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Testing testing</title>
+    <title>Register Receipt</title>
     <%@ page contentType="text/html; charset=UTF-8" %>
-    <%@include file="cssLoader.jsp" %>
+    <link href="${pageContext.request.contextPath}/assets/css/style.css" REL="stylesheet" TYPE="text/css">
 
-    <title>Profile Card</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -20,8 +19,8 @@
 
 <div class="hero">
     <div class="navbar">
-        <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo">
-        <button class="button" onclick="location.href='MyPage.jsp'" type="button">
+        <img src="${pageContext.request.contextPath}/assets/img/norges-roforbund-logo.png" class="logo">
+        <button class="button" onclick="location.href='myPage.jsp'" type="button">
             Min side
         </button>
     </div>
@@ -29,14 +28,14 @@
     <div class="card-container">
         <div class="upper-container">
 
-            <h1>Brukeren er opprettet!</h1>
+<h1>Resultatene er registrert!</h1>
 
             <h2>
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                </svg>
+                <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </svg>
             </h2>
-            <button class="buttonClose" onclick="location.href='MyPage.jsp'" type="button"> Lukk </button>
+                <button class="buttonClose" onclick="location.href='startPage.jsp'" type="button"> Lukk </button>
         </div>
     </div>
 </div>
@@ -77,7 +76,7 @@
         font-weight: bold;
         position: absolute;
         top: 25%;
-        left: 22%;
+        left: 20%;
     }
 
     h2 {
@@ -109,4 +108,4 @@
         color: white;
         border: 2px solid #000000;
     }
-</style>
+    </style>

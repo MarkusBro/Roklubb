@@ -1,6 +1,6 @@
 package tools.repository;
 
-import models.ClassResultatsModel;
+import models.ClassResultModel;
 import models.TestBatchModel;
 import models.TestModel;
 import models.UserInfoModel;
@@ -176,10 +176,10 @@ public class ClassRepository {
      * @return et String objekt med eposten til brukeren.
      */
 
-    public static List<ClassResultatsModel> getClassResultat() {
+    public static List<ClassResultModel> getClassResultat() {
         Connection db = null;
         PreparedStatement prepareStatement = null;
-        List<ClassResultatsModel> toReturn = new ArrayList<>();
+        List<ClassResultModel> toReturn = new ArrayList<>();
         try {
             db = DbTool.getINSTANCE().dbLoggIn();
             ResultSet rs = null;
@@ -191,8 +191,8 @@ public class ClassRepository {
             prepareStatement = db.prepareStatement(query);
             rs = prepareStatement.executeQuery();
             while (rs.next()) {
-                ClassResultatsModel getTableModel = new
-                        ClassResultatsModel(rs.getString("fname"), rs.getString("lname"), rs.getString("club_name"), rs.getString("class_name_static"), rs.getDate("startDate"), rs.getDouble("5kmW")
+                ClassResultModel getTableModel = new
+                        ClassResultModel(rs.getString("fname"), rs.getString("lname"), rs.getString("club_name"), rs.getString("class_name_static"), rs.getDate("startDate"), rs.getDouble("5kmW")
                         , rs.getTime("5kmT"), rs.getDouble("2kmW"), rs.getTime("2kmT"), rs.getDouble("60sW"), rs.getDouble("percentLieRow"),
                         rs.getDouble("kgLieRow"), rs.getDouble("percentSquat"), rs.getDouble("kgSquat"), rs.getInt("flexibility"));
 

@@ -1,6 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="models.UserInfoModel" %>
-<%@ page import="models.ClassResultatsModel" %>
+<%@ page import="models.ClassResultModel" %>
 <%@ page import="tools.repository.ClassRepository" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
@@ -24,20 +24,19 @@
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css"/>
-
+    <link href="${pageContext.request.contextPath}/assets/css/style.css" REL="stylesheet" TYPE="text/css">
     <!--- Test om style eller link vil fungere pga JSP --->
-    <jsp:include page="./cssLoader.jsp"></jsp:include>
 </head>
 
 <body>
 
 
 <div class="navbar">
-    <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo">
-    <button class="button" onclick="location.href='MyPage.jsp'" type="button">Min side</button>
+    <img src="${pageContext.request.contextPath}/assets/img/norges-roforbund-logo.png" class="logo">
+    <button class="button" onclick="location.href='myPage.jsp'" type="button">Min side</button>
 
 </div>
-<button class="buttonBack" onclick="location.href='Classes.jsp'" type="button">
+<button class="buttonBack" onclick="location.href='classes.jsp'" type="button">
     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-90deg-left" fill="currentColor"
          xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd"

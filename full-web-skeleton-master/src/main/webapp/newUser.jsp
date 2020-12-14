@@ -10,9 +10,9 @@
     <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NewUser</title>
+    <title>New User</title>
     <%@ page contentType="text/html; charset=ISO-8859-1" %>
-    <%@include file="cssLoader.jsp" %>
+    <link href="${pageContext.request.contextPath}/assets/css/style.css" REL="stylesheet" TYPE="text/css">
 
 </head>
 <body>
@@ -21,9 +21,9 @@
 <div class="hero">
 
     <div class="navbar">
-        <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo"
+        <img src="${pageContext.request.contextPath}/assets/img/norges-roforbund-logo.png" class="logo"
              onclick="location.href='index.jsp'">
-        <button class="button" onclick="location.href='MyPage.jsp'" type="button">
+        <button class="button" onclick="location.href='myPage.jsp'" type="button">
             Min side
         </button>
 
@@ -38,7 +38,7 @@
     </div>
 
     <div>
-        <button class="buttonBack2" onclick="location.href='MyPage.jsp'" type="button">
+        <button class="buttonBack2" onclick="location.href='myPage.jsp'" type="button">
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-90deg-left" fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
