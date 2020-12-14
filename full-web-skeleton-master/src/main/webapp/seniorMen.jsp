@@ -1,6 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="models.UserInfoModel" %>
-<%@ page import="models.ClassResultatsModel" %>
+<%@ page import="models.ClassResultModel" %>
 <%@ page import="tools.repository.ClassRepository" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
@@ -26,10 +26,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css"/>
 
     <!--- Linker til styles.css --->
-    <link rel="stylesheet" href="styles.css">
+    <link href="${pageContext.request.contextPath}/assets/css/style.css" REL="stylesheet" TYPE="text/css">
 
-    <!--- Test om style eller link vil fungere pga JSP --->
-    <jsp:include page="./cssLoader.jsp"></jsp:include>
     <style>
         .Table {
             position: absolute;
@@ -47,11 +45,11 @@
 
 <div class="hero">
 <div class="navbar">
-    <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo">
-    <button class="button" onclick="location.href='MyPage.jsp'" type="button">Min side</button>
+    <img src="${pageContext.request.contextPath}/assets/img/norges-roforbund-logo.png" class="logo">
+    <button class="button" onclick="location.href='myPage.jsp'" type="button">Min side</button>
 
 </div>
-<button class="buttonBack" onclick="location.href='Classes.jsp'" type="button">
+<button class="buttonBack" onclick="location.href='classes.jsp'" type="button">
     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-90deg-left" fill="currentColor"
          xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd"
@@ -84,8 +82,8 @@
 
         <!--- Innholdet i table --->
         <%
-            List<ClassResultatsModel> tableModelList = (List<ClassResultatsModel>) request.getAttribute("List");
-            for (ClassResultatsModel model : tableModelList) {
+            List<ClassResultModel> tableModelList = (List<ClassResultModel>) request.getAttribute("List");
+            for (ClassResultModel model : tableModelList) {
         %>
 
         <tr style="background-color: white">

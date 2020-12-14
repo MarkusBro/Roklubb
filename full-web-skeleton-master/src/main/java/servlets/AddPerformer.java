@@ -29,7 +29,7 @@ public class AddPerformer extends AbstractAppServlet {
             throws ServletException, IOException {
         List<UserInfoModel> useResult = ClassRepository.getUser();
         req.setAttribute("userlist", useResult);
-        req.getRequestDispatcher("AddUser.jsp").forward(req, resp);
+        req.getRequestDispatcher("addUser.jsp").forward(req, resp);
     }
 
 

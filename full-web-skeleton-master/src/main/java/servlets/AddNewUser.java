@@ -55,7 +55,7 @@ public class AddNewUser extends AbstractAppServlet {
         addBruker.add(userInfo);
         req.setAttribute("testid", testId);
         req.setAttribute("addBruker", addBruker);
-        req.getRequestDispatcher("AddTest.jsp").forward(req, resp);
+        req.getRequestDispatcher("addTest.jsp").forward(req, resp);
     }
 }
 

@@ -14,21 +14,18 @@
     <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Testing testing</title>
+    <title>Add Test</title>
     <%@ page contentType="text/html; charset=ISO-8859-1" %>
-    <%@include file="cssLoader.jsp" %>
-
-    <title>Profile Card</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="${pageContext.request.contextPath}/assets/css/style.css" REL="stylesheet" TYPE="text/css">
 </head>
 
 
 <body>
 <div class="hero">
     <div class="navbar">
-        <img src="${pageContext.request.contextPath}/bilder/norges-roforbund-logo.png" class="logo">
+        <img src="${pageContext.request.contextPath}/assets/img/norges-roforbund-logo.png" class="logo">
 
-        <button class="button" onclick="location.href='MyPage.jsp'" type="button">
+        <button class="button" onclick="location.href='myPage.jsp'" type="button">
             Min side
         </button>
 

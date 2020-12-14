@@ -4,7 +4,7 @@ package models;
 import java.sql.Date;
 import java.sql.Time;
 
-public class ClassResultatsModel {
+public class ClassResultModel {
     String fname;
     String lname;
     String clubname;
@@ -22,7 +22,7 @@ public class ClassResultatsModel {
     int flexibility;
 
 
-    public ClassResultatsModel(String firstName, String lastName, String clubName, String className, Date startDate, Double Watt5, Time Time5, Double Watt2, Time Time2, Double Watt60, Double lierowProsent, Double lierowKg, Double squatProsent, Double squatKg, int Flexibility) {
+    public ClassResultModel(String firstName, String lastName, String clubName, String className, Date startDate, Double Watt5, Time Time5, Double Watt2, Time Time2, Double Watt60, Double lierowProsent, Double lierowKg, Double squatProsent, Double squatKg, int Flexibility) {
         fname = firstName;
         lname = lastName;
         clubname = clubName;

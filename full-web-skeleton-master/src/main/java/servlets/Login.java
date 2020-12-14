@@ -18,7 +18,7 @@ public class Login extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("StartPage.jsp").forward(req, resp);
+        req.getRequestDispatcher("startPage.jsp").forward(req, resp);
 
     }
 
@@ -42,14 +42,14 @@ public class Login extends HttpServlet {
 
 
 
-                request.getRequestDispatcher("StartPage.jsp").forward(request,response);
+                request.getRequestDispatcher("startPage.jsp").forward(request,response);
 
 
             }else {
                 String error = "Feil brukernavn eller passord";
 
                 request.setAttribute("error", error);
-                request.getRequestDispatcher("Login.jsp").forward(request,response);
+                request.getRequestDispatcher("login.jsp").forward(request,response);
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
