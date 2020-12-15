@@ -1,12 +1,21 @@
 package tools.repository;
+
 import models.UserInfoModel;
 import tools.DbTool;
 
 import java.sql.*;
+
 public class UserDAO {
-    public boolean checklogin (String username, String password) throws SQLException,
-            ClassNotFoundException{
-        Connection conn =DbTool.getINSTANCE().dbLoggIn();
+    public boolean checklogin(String username, String password, boolean testing) throws SQLException,
+            ClassNotFoundException {
+        Connection conn = null;
+        if (testing) {
+            conn = DbTool.getINSTANCE().dbloginfortesting();
+
+        } else {
+            conn = DbTool.getINSTANCE().dbLoggIn();
+        }
+
 
         String sql = "SELECT * FROM roklubb.user WHERE email = ?  and password = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
@@ -25,8 +34,14 @@ public class UserDAO {
 
     }
 
-    public UserInfoModel getUser(String email) throws SQLException {
-        Connection conn =DbTool.getINSTANCE().dbLoggIn();
+    public UserInfoModel getUser(String email, boolean testing) throws SQLException {
+        Connection conn = null;
+        if (testing) {
+            conn = DbTool.getINSTANCE().dbloginfortesting();
+
+        } else {
+            conn = DbTool.getINSTANCE().dbLoggIn();
+        }
 
         String sql = "SELECT * FROM roklubb.user WHERE email = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
@@ -34,7 +49,7 @@ public class UserDAO {
 
         UserInfoModel user = new UserInfoModel();
         ResultSet result = statement.executeQuery();
-        while (result.next()){
+        while (result.next()) {
             user.setFirstName(result.getString("fname"));
             user.setLastName(result.getString("lname"));
             user.setUserType(result.getString("userType_name"));
@@ -42,7 +57,7 @@ public class UserDAO {
             user.setEmail(result.getString("email"));
 
         }
-            return user;
+        return user;
 
 
     }
