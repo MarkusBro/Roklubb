@@ -183,7 +183,7 @@ public class ClassRepository {
         try {
             db = DbTool.getINSTANCE().dbLoggIn();
             ResultSet rs = null;
-            String query = "SELECT roklubb.user.fname, roklubb.user.lname, roklubb.user.club_name, roklubb.testResult.class_name_static,roklubb.testBatch.startDate, 5kmW, 5kmT, 2kmW, 2kmT, 60sW, percentLieRow, kgLieRow, percentSquat, kgSquat, flexibility\n" +
+            String query = "SELECT roklubb.testResult.rank,roklubb.testResult.score,roklubb.user.fname, roklubb.user.lname, roklubb.user.club_name, roklubb.testResult.class_name_static,roklubb.testBatch.startDate, 5kmW, 5kmT, 2kmW, 2kmT, 60sW, percentLieRow, kgLieRow, percentSquat, kgSquat, flexibility\n" +
                     "                    FROM roklubb.testResult\n" +
                     "                             INNER JOIN roklubb.user ON testResult.user_id = user.id\n" +
                     "                            INNER JOIN roklubb.testBatch on roklubb.testBatch.id = testBatch_id\n" +
@@ -192,7 +192,7 @@ public class ClassRepository {
             rs = prepareStatement.executeQuery();
             while (rs.next()) {
                 ClassResultatsModel getTableModel = new
-                        ClassResultatsModel(rs.getString("fname"), rs.getString("lname"), rs.getString("club_name"), rs.getString("class_name_static"), rs.getDate("startDate"), rs.getDouble("5kmW")
+                        ClassResultatsModel(rs.getString("rank"), rs.getString("score"),rs.getString("fname"), rs.getString("lname"), rs.getString("club_name"), rs.getString("class_name_static"), rs.getDate("startDate"), rs.getDouble("5kmW")
                         , rs.getTime("5kmT"), rs.getDouble("2kmW"), rs.getTime("2kmT"), rs.getDouble("60sW"), rs.getDouble("percentLieRow"),
                         rs.getDouble("kgLieRow"), rs.getDouble("percentSquat"), rs.getDouble("kgSquat"), rs.getInt("flexibility"));
 

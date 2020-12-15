@@ -67,6 +67,8 @@
         <!--- Innholdet over table --->
         <thead>
         <tr>
+            <th>Rank</th>
+            <th>Score</th>
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Club</th>
@@ -89,6 +91,10 @@
         %>
 
         <tr style="background-color: white">
+            <td><%=model.getRank()%>
+            </td>
+            <td><%=model.getScore()%>
+            </td>
             <td><%=model.getFname()%>
             </td>
             <td><%=model.getLname()%>
