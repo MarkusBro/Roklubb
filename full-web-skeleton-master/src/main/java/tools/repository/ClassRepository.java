@@ -9,18 +9,13 @@ import tools.DbTool;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class ClassRepository {
-    /**
-     * legger til bruker til databasen.
-     * Denne er ikke implementert. Her må dere gjerne prøve å lage en egen servlet som kan kommunisere med
-     * denne metoden.
-     *
-     * @param user bruker objekt som inneholder all informasjon om personen.
-     *             Tips: Objektet må instansieres i en servlet før man kaller på addUser().
-     */
-
+    private static final Logger logger = Logger.getLogger(ClassRepository.class.getName());
+    private static final String errorMessage = "SQLException error";
 
     public static void addUser(UserInfoModel user) {
         Connection db = null;
@@ -41,15 +36,21 @@ public class ClassRepository {
             insertNewUser.setString(8, user.getLastName());
             insertNewUser.setString(9, user.getDob());
             insertNewUser.setString(10, user.getBio());
+
             insertNewUser.execute();
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, errorMessage, e);
         } finally {
             try {
                 db.close();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+            } catch (SQLException e) {
+                logger.log(Level.SEVERE, errorMessage, e);
+            }
+            try {
+                insertNewUser.close();
+            } catch (SQLException e) {
+                logger.log(Level.SEVERE, errorMessage, e);
             }
         }
     }
@@ -78,19 +79,24 @@ public class ClassRepository {
             insertNewUser.setString(13, test.getPercentSquat());
             insertNewUser.setString(14, test.getKgSquat());
 
-
             insertNewUser.execute();
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, errorMessage, e);
         } finally {
             try {
                 db.close();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+            } catch (SQLException e) {
+                logger.log(Level.SEVERE, errorMessage, e);
+            }
+            try {
+                insertNewUser.close();
+            } catch (SQLException e) {
+                logger.log(Level.SEVERE, errorMessage, e);
             }
         }
     }
+
     public static void addClub(UserInfoModel user) {
         Connection db = null;
         PreparedStatement insertNewUser = null;
@@ -102,19 +108,25 @@ public class ClassRepository {
             insertNewUser.setString(1, user.getClub());
             insertNewUser.execute();
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, errorMessage, e);
         } finally {
             try {
                 db.close();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+            } catch (SQLException e) {
+                logger.log(Level.SEVERE, errorMessage, e);
+            }
+            try {
+                insertNewUser.close();
+            } catch (SQLException e) {
+                logger.log(Level.SEVERE, errorMessage, e);
             }
         }
     }
 
     /**
      * inserter en ny testbatch.
+     *
      * @param test: et test objekt som inneholder info om testen.(datoen)
      */
     public static void addTestBatch(TestBatchModel test) {
@@ -128,13 +140,18 @@ public class ClassRepository {
             insertNewUser.setString(1, test.getTestdate());
             insertNewUser.execute();
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, errorMessage, e);
         } finally {
             try {
                 db.close();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+            } catch (SQLException e) {
+                logger.log(Level.SEVERE, errorMessage, e);
+            }
+            try {
+                insertNewUser.close();
+            } catch (SQLException e) {
+                logger.log(Level.SEVERE, errorMessage, e);
             }
         }
     }
@@ -155,19 +172,15 @@ public class ClassRepository {
             while (rs.next()) {
                 TestBatchModel getTestModel = new
                         TestBatchModel(rs.getString("id"), rs.getString("startDate"), rs.getString("endDate"));
-
                 toReturn.add(getTestModel);
-
             }
             rs.close();
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, errorMessage, e);
         }
-
         return toReturn;
-
     }
+
     /**
      * henter ut spesifikk person fra databasen
      * <p>
@@ -192,21 +205,16 @@ public class ClassRepository {
             rs = prepareStatement.executeQuery();
             while (rs.next()) {
                 ClassResultModel getTableModel = new
-                        ClassResultModel(rs.getString("rank"),rs.getString("score"),rs.getString("fname"), rs.getString("lname"), rs.getString("club_name"), rs.getString("class_name_static"), rs.getDate("startDate"), rs.getDouble("5kmW")
+                        ClassResultModel(rs.getString("rank"), rs.getString("score"), rs.getString("fname"), rs.getString("lname"), rs.getString("club_name"), rs.getString("class_name_static"), rs.getDate("startDate"), rs.getDouble("5kmW")
                         , rs.getTime("5kmT"), rs.getDouble("2kmW"), rs.getTime("2kmT"), rs.getDouble("60sW"), rs.getDouble("percentLieRow"),
                         rs.getDouble("kgLieRow"), rs.getDouble("percentSquat"), rs.getDouble("kgSquat"), rs.getInt("flexibility"));
-
                 toReturn.add(getTableModel);
-
             }
             rs.close();
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, errorMessage, e);
         }
-
         return toReturn;
-
     }
 
     public static List<UserInfoModel> getUser() {
@@ -223,24 +231,19 @@ public class ClassRepository {
             while (rs.next()) {
                 UserInfoModel getTableModel = new
                         UserInfoModel(rs.getString("id"), rs.getString("fname"), rs.getString("lname"), rs.getString("dob"), rs.getString("userType_name")
-                        ,rs.getString("class_name"), rs.getString("club_name"));
-
+                        , rs.getString("class_name"), rs.getString("club_name"));
                 toReturn.add(getTableModel);
-
             }
             rs.close();
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, errorMessage, e);
         }
-
         return toReturn;
-
     }
+
     public static List<UserInfoModel> newList() {
         Connection db = null;
         PreparedStatement prepareStatement = null;
-
         List<UserInfoModel> toReturn = new ArrayList<>();
         try {
             db = DbTool.getINSTANCE().dbLoggIn();
@@ -250,21 +253,16 @@ public class ClassRepository {
             rs = prepareStatement.executeQuery();
             while (rs.next()) {
                 UserInfoModel getModel = new
-                        UserInfoModel(rs.getString("id"),rs.getString("email"), rs.getString("password"), rs.getString("fname"),
+                        UserInfoModel(rs.getString("id"), rs.getString("email"), rs.getString("password"), rs.getString("fname"),
                         rs.getString("lname"), rs.getString("dob"), rs.getString("bio"), rs.getString("usertype"), rs.getString("classname"), rs.getString("club"));
-
                 toReturn.add(getModel);
-
             }
-
             rs.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, errorMessage, e);
         }
         return toReturn;
     }
-
-
 }
 
 
