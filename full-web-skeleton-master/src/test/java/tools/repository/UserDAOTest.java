@@ -30,11 +30,13 @@ class UserDAOTest {
      */
     @Test
     public void getUser() throws SQLException {
+        //arrange
         UserInfoModel expected = new UserInfoModel ("1","Per","moe","utøver","Senior Mann","Kristiansand Roklubb");
-    UserDAO dao = new UserDAO();
-    UserInfoModel actual = dao.getUser("per@KrsRoklubb.no",true);
-    assertEquals(expected.getFirstName(),actual.getFirstName());
-
+        //act
+        UserDAO dao = new UserDAO();
+        UserInfoModel actual = dao.getUser("per@KrsRoklubb.no",true);
+        //assert
+        assertEquals(expected.getFirstName(),actual.getFirstName());
 
     }
 }
