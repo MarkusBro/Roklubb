@@ -53,13 +53,8 @@
 
     <div class="newUser">
         <div class="upper-container">
-
             <form action="${pageContext.request.contextPath}/NewUser" method="POST">
-                <br/>
                 <p><u><h2>Legg til ny bruker</h2></u></p>
-                <br/>
-                <br/>
-                <br/>
                 <div class="textbox">
                     <input type="text" placeholder="Email" name="email" value="">
                     <input type="text" placeholder="Fornavn" name="fname" value="">
@@ -67,32 +62,14 @@
                     <input type="date" placeholder="Fødselsdato" name="dob" value="">
                     <input type="text" placeholder="Klubb" name="club" value="">
                     <input type="password" placeholder="Passord" name="passord" value="">
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+
                     <label for="usertype">Velg din brukertype:</label>
                     <select charset="UTF-8" name="usertype" id="usertype">
                         <option value="Utøver">Utøver</option>
                         <option value="Trener">Trener</option>
                         <option value="Admin">Admin</option>
                     </select>
-                    <br/>
-                    <br/>
+
                     <label for="klasse">Velg din klasse:</label>
                     <select name="class" id="klasse">
                         <option name="Senior Mann" value="Senior mann">Senior Mann</option>
@@ -104,7 +81,6 @@
                         <option value="C gutter">Junior C Gutter</option>
                         <option value="C jenter">Junior C Jenter</option>
                     </select>
-                    <br/>
                     <textarea id="bio" name="bio" rows="4" cols="46" placeholder="Bio (Maks 200 tegn)"
                               maxlength="200"></textarea>
                     <input class="btn btn-primary" type="submit" name="" value="Legg til bruker">
@@ -140,6 +116,7 @@
     .upper-container {
         height: 40px;
         background: #F1E10B;
+        margin-bottom: 10%;
     }
 
     textarea {
@@ -211,7 +188,26 @@
         top: 47%;
         left: 5%;
     }
-
+    label[for=usertype] {
+        position: absolute;
+        top: 65%;
+        left: 3%;
+    }
+    label[for=klasse] {
+        position: absolute;
+        top: 70%;
+        left: 3%;
+    }
+    select[name=usertype] {
+        position: absolute;
+        top: 65%;
+        left: 40%;
+    }
+    select[name=class] {
+        position: absolute;
+        top: 70%;
+        left: 31%;
+    }
     input[type=submit] {
         position: absolute;
         top: 89%;
