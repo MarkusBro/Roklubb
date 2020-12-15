@@ -31,9 +31,9 @@ public class Login extends HttpServlet {
         UserDAO userdb = new UserDAO();
 
         try {
-            if (userdb.checklogin(name,password)){
+            if (userdb.checklogin(name,password,false)){
                 HttpSession session=request.getSession();
-                UserInfoModel user = userdb.getUser(name);
+                UserInfoModel user = userdb.getUser(name,false);
                 session.setAttribute("firstname",user.getFirstName());
                 session.setAttribute("lastname",user.getLastName());
                 session.setAttribute("userType_name",user.getUserType());
