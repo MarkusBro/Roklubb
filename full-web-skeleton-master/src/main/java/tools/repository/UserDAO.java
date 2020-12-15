@@ -16,7 +16,6 @@ public class UserDAO {
             conn = DbTool.getINSTANCE().dbLoggIn();
         }
 
-
         String sql = "SELECT * FROM roklubb.user WHERE email = ?  and password = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, username);
@@ -31,7 +30,6 @@ public class UserDAO {
             conn.close();
             return false;
         }
-
     }
 
     public UserInfoModel getUser(String email, boolean testing) throws SQLException {
@@ -58,8 +56,6 @@ public class UserDAO {
 
         }
         return user;
-
-
     }
 }
 
