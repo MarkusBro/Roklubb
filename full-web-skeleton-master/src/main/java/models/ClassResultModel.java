@@ -5,6 +5,8 @@ import java.sql.Date;
 import java.sql.Time;
 
 public class ClassResultModel {
+    String rank;
+    String score;
     String fname;
     String lname;
     String clubname;
@@ -22,7 +24,9 @@ public class ClassResultModel {
     int flexibility;
 
 
-    public ClassResultModel(String firstName, String lastName, String clubName, String className, Date startDate, Double Watt5, Time Time5, Double Watt2, Time Time2, Double Watt60, Double lierowProsent, Double lierowKg, Double squatProsent, Double squatKg, int Flexibility) {
+    public ClassResultModel(String rank, String score,String firstName, String lastName, String clubName, String className, Date startDate, Double Watt5, Time Time5, Double Watt2, Time Time2, Double Watt60, Double lierowProsent, Double lierowKg, Double squatProsent, Double squatKg, int Flexibility) {
+        this.rank = rank;
+        this.score = score;
         fname = firstName;
         lname = lastName;
         clubname = clubName;
@@ -39,6 +43,22 @@ public class ClassResultModel {
         squatkg = squatKg;
         flexibility = Flexibility;
 
+    }
+
+    public String getRank() {
+        return rank;
+    }
+
+    public void setRank(String rank) {
+        this.rank = rank;
+    }
+
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
     }
 
     public Date getStartdate() {
