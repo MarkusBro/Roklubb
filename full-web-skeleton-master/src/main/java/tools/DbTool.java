@@ -14,6 +14,7 @@ public final class DbTool {
     static Connection connection;
     //path til config.properties på payara server
     static String payara = "/opt/payara/config.properties";
+    static String local = "src/config.properties";
 
     /**
      * initiates the class as a singleton.
@@ -88,6 +89,44 @@ public final class DbTool {
             System.out.println("SQL Exception " + e);
         }
         return toReturn;
+
+    }
+    public Connection dbloginfortesting() throws SQLException {
+        Connection toReturn = null;
+        Map<String, String> result = getPropertiesForTest();
+
+
+        try {
+            toReturn = (connection != null)
+                    ? connection
+                    : DriverManager.getConnection(
+                    result.get("URL"),
+                    result.get("username"),
+                    result.get("password"));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("SQL Exception " + e);
+        }
+        return toReturn;
+    }
+    private static Map<String, String> getPropertiesForTest() {
+        Map<String, String> result = new HashMap<>();
+
+
+        try (InputStream input = new FileInputStream(local)) {
+            Properties prop = new Properties();
+
+            prop.load(input);
+            result.put("username", prop.getProperty("username"));
+            result.put("password", prop.getProperty("password"));
+            result.put("URL","jdbc:mariadb://localhost:3308/roklubb");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+
+        }
+        return result;
+
     }
 }
 
