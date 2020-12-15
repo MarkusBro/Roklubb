@@ -1,6 +1,6 @@
 package servlets;
 
-import models.ClassResultatsModel;
+import models.ClassResultModel;
 import tools.repository.ClassRepository;
 
 import javax.servlet.ServletException;
@@ -26,7 +26,7 @@ public class ClassResults extends AbstractAppServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<ClassResultatsModel> useResult = ClassRepository.getClassResultat();
+        List<ClassResultModel> useResult = ClassRepository.getClassResultat();
         req.setAttribute("List", useResult);
         req.getRequestDispatcher("SeniorMen.jsp").forward(req, resp);
     }

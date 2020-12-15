@@ -1,6 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="models.UserInfoModel" %>
-<%@ page import="models.ClassResultatsModel" %>
+<%@ page import="models.ClassResultModel" %>
 <%@ page import="tools.repository.ClassRepository" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
@@ -86,8 +86,8 @@
 
         <!--- Innholdet i table --->
         <%
-            List<ClassResultatsModel> tableModelList = (List<ClassResultatsModel>) request.getAttribute("List");
-            for (ClassResultatsModel model : tableModelList) {
+            List<ClassResultModel> tableModelList = (List<ClassResultModel>) request.getAttribute("List");
+            for (ClassResultModel model : tableModelList) {
         %>
 
         <tr style="background-color: white">
